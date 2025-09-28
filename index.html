@@ -41,6 +41,8 @@
         --arts-secondary: #ffdda1;
         --events-primary: #ff5722;
         --events-secondary: #ffc107;
+        --portal-glow-start: rgba(209, 223, 18, 0.9);
+        --portal-glow-end: rgba(217, 255, 0, 0.9);
       }
 
       /* General styles */
@@ -421,6 +423,50 @@
         filter: invert(1);
       }
 
+      /*Student Portal*/
+      #portal-card {
+        background-color: #f07624;
+        color: #e0e0e0;
+        box-shadow: 0 0 15px rgba(100, 100, 255, 0.3);
+        align-items: center;
+      }
+      #portal-card .card-title {
+        font-family: "Orbitron", sans-serif;
+      }
+      #portal-card .icon {
+        color: #bbff4d;
+      }
+      #portal-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          var(--portal-glow-start),
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: 1;
+      }
+      #portal-card:hover::before {
+        opacity: 0.5;
+      }
+      .modal-portal .modal-content {
+        background: #f07624;
+        color: white;
+        border: 1px solid #ff4d97;
+      }
+      .modal-portal .modal-header {
+        border-bottom: 1px solid #4d94ff;
+      }
+      .modal-portal .btn-close {
+        filter: invert(1);
+      }
+
       /* Events Section */
       #events {
         background-color: #ffffff;
@@ -669,33 +715,8 @@
               >
             </li>
 
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#highlights"
-                id="highlightsDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Highlights
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="highlightsDropdown">
-                <li>
-                  <a class="dropdown-item" href="#resources"
-                    >Resources & Downloads</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#projects"
-                    >Projects & Achievements</a
-                  >
-                </li>
-              </ul>
-            </li>
-
             <li class="nav-item">
-              <a class="nav-link" href="#announcements">Announcements</a>
+              <a class="nav-link" href="#events">News & Events</a>
             </li>
 
             <li class="nav-item">
@@ -744,10 +765,12 @@
           </div>
           <div class="col-lg-6">
             <h2 class="section-title">About Our Department</h2>
+            <h4>Vision and Mission</h4>
             <p class="lead">
               We are a collective of thinkers, creators, and leaders dedicated
               to pushing the boundaries of knowledge and technology.
             </p>
+            <h4>History</h4>
             <p>
               Our department fosters a unique environment where students are
               encouraged to collaborate across disciplines. From coding the next
@@ -1316,7 +1339,9 @@
                   workshops, and guest lectures.
                 </p>
               </div>
-              <a href="#" class="btn btn-outline-primary mt-3">What we do</a>
+              <a href="#societies" class="btn btn-outline-primary mt-3"
+                >What we do</a
+              >
             </div>
           </div>
           <!-- Finance Society Card -->
@@ -1335,7 +1360,9 @@
                   with transparency.
                 </p>
               </div>
-              <a href="#" class="btn btn-outline-light mt-3">What we do</a>
+              <a href="#societies" class="btn btn-outline-light mt-3"
+                >What we do</a
+              >
             </div>
           </div>
           <!-- Arts & Culture Card -->
@@ -1354,7 +1381,9 @@
                   literature, and visual arts.
                 </p>
               </div>
-              <a href="#" class="btn btn-outline-light mt-3">What we do</a>
+              <a href="#societies" class="btn btn-outline-light mt-3"
+                >What we do</a
+              >
             </div>
           </div>
           <!-- Events Management Card -->
@@ -1375,7 +1404,9 @@
                   events for the entire campus.
                 </p>
               </div>
-              <a href="#" class="btn btn-outline-warning mt-3">What we do</a>
+              <a href="#societies" class="btn btn-outline-warning mt-3"
+                >What we do</a
+              >
             </div>
           </div>
         </div>
@@ -1492,6 +1523,53 @@
         </div>
       </div>
     </div>
+
+    <!-- Portal Section -->
+    <section id="portal" class="section-padding">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Student Portal</h2>
+          <p class="lead mb-5">
+            Log in to your LMS through a single student portal. Handle
+            attendance, coursework, assignments, and learning resources without
+            hassle.
+          </p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <!-- Portal Card -->
+          <div class="col-lg-3 col-md-6">
+            <div
+              id="portal-card"
+              class="card h-100 society-card text-center p-4 position-relative"
+              style="opacity: 0.6; pointer-events: none; cursor: not-allowed"
+            >
+              <div class="card-body">
+                <span class="icon"><i class="bi bi-book-fill"></i></span>
+                <h5 class="card-title">
+                  LMS
+                  <span class="badge bg-warning text-dark ms-2"
+                    >Coming Soon</span
+                  >
+                </h5>
+                <p>
+                  The student portal is currently under construction. Soon
+                  you'll be able to manage attendance, grades, fees, profiles,
+                  and semester details all in one place.
+                </p>
+              </div>
+              <a
+                href="#"
+                class="btn btn-secondary mt-3 disabled"
+                tabindex="-1"
+                aria-disabled="true"
+              >
+                Coming Soon
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Events/News Section -->
     <section id="events" class="section-padding">
