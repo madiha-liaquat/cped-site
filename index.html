@@ -57,6 +57,7 @@
         }
 
         /* Navbar */
+
         .navbar {
             transition: background-color 0.3s ease-in-out;
             padding: 1rem 1.5rem;
@@ -67,14 +68,21 @@
             font-weight: 600;
         }
 
+        .dropdown-menu, .dropdown-item {
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: color 0.3s;
+
+        }
+
         .nav-link {
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.1px;
             transition: color 0.3s;
         }
         
-        .nav-link.active, .nav-link:hover {
+        .nav-link.active, .nav-link:hover, .dropdown-item:hover {
             color: var(--bs-primary) !important;
         }
         
@@ -424,16 +432,73 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faculty">Faculty</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#societies">Societies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+             <ul class="navbar-nav ms-auto">
+    <!-- Home -->
+    <li class="nav-item">
+      <a class="nav-link" href="#hero">Home</a>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#about" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        About
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+        <li><a class="dropdown-item" href="#vision">Vision and Mission</a></li>
+        <li><a class="dropdown-item" href="#history">History</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#faculty" id="facultyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Faculty
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="facultyDropdown">
+        <li><a class="dropdown-item" href="#hod">Head of Department</a></li>
+        <li><a class="dropdown-item" href="#dsa">Director of Student Affairs</a></li>
+        <li><a class="dropdown-item" href="#instructors">Course Instructors</a></li>
+        <li><a class="dropdown-item" href="#labengineers">Lab Engineers</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#societies" id="societiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Societies
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="societiesDropdown">
+        <li><a class="dropdown-item" href="#tech">Tech and Social Media</a></li>
+        <li><a class="dropdown-item" href="#events">Events Management</a></li>
+        <li><a class="dropdown-item" href="#arts">Arts and Culture</a></li>
+        <li><a class="dropdown-item" href="#finance">Finance</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#portal">Student Portal</a>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#highlights" id="highlightsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Highlights
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="highlightsDropdown">
+        <li><a class="dropdown-item" href="#resources">Resources & Downloads</a></li>
+        <li><a class="dropdown-item" href="#projects">Projects & Achievements</a></li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#announcements">Announcements</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#gallery">Gallery</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#contact">Contact</a>
+    </li>
+  </ul>
+</div>
         </div>
     </nav>
 
@@ -1071,5 +1136,3 @@
 </script>
 </body>
 </html>
-
-
