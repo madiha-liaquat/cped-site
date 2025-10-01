@@ -422,7 +422,6 @@
       .modal-events .btn-close {
         filter: invert(1);
       }
-
       /*Student Portal*/
       #portal-card {
         background-color: #f07624;
@@ -451,10 +450,12 @@
         opacity: 0;
         transition: opacity 0.5s ease;
         z-index: 1;
+        pointer-events: none; /* ✅ Add this */
       }
       #portal-card:hover::before {
         opacity: 0.5;
       }
+
       .modal-portal .modal-content {
         background: #f07624;
         color: white;
@@ -710,9 +711,34 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#portal" title="Under Construction"
+              <a class="nav-link" href="#portal" title="Newly launched"
                 >Student Portal</a
               >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#highlights"
+                id="highlightsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Highlights
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="highlightsDropdown">
+                <li>
+                  <a class="dropdown-item" href="#resources"
+                    >Resources & Downloads</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#projects"
+                    >Projects & Achievements</a
+                  >
+                </li>
+              </ul>
             </li>
 
             <li class="nav-item">
@@ -1541,29 +1567,26 @@
             <div
               id="portal-card"
               class="card h-100 society-card text-center p-4 position-relative"
-              style="opacity: 0.6; pointer-events: none; cursor: not-allowed"
             >
               <div class="card-body">
                 <span class="icon"><i class="bi bi-book-fill"></i></span>
                 <h5 class="card-title">
                   LMS
-                  <span class="badge bg-warning text-dark ms-2"
-                    >Coming Soon</span
-                  >
+                  <span class="badge bg-success text-light ms-2">Active</span>
                 </h5>
                 <p>
-                  The student portal is currently under construction. Soon
-                  you'll be able to manage attendance, grades, fees, profiles,
-                  and semester details all in one place.
+                  Access the student portal to manage attendance, grades,
+                  timelines, calendar, profiles, and semester details all in one
+                  place.
                 </p>
               </div>
               <a
-                href="#"
-                class="btn btn-secondary mt-3 disabled"
-                tabindex="-1"
-                aria-disabled="true"
+                href="https://portal.bzu.edu.pk"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary mt-3"
               >
-                Coming Soon
+                Access Now
               </a>
             </div>
           </div>
@@ -1676,14 +1699,11 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item">
-              <img
-                src="https://placehold.co/600x600/F1C40F/FFFFFF?text=Celebration"
-                alt="Gallery Image 2"
-              />
+              <img src="/Gallery/milad.jpg" alt="Gallery Image 2" />
               <div class="overlay">
                 <div class="overlay-content">
                   <h5>Event Success</h5>
-                  <p>The organizing committee after a successful event.</p>
+                  <p>A successful event.</p>
                 </div>
               </div>
             </div>
