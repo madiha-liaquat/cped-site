@@ -1,1075 +1,1935 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Department of Computer Engineering</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Inter:wght@300;400;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300;400;600;700&family=Nunito:wght@300;400;600&family=Orbitron:wght@400..900&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Inter:wght@300;400;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:wght@300;400;600;700&family=Nunito:wght@300;400;600&family=Orbitron:wght@400..900&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS -->
     <style>
-        :root {
-            --bs-primary: #0d6efd;
-            --bs-primary-rgb: 13, 110, 253;
-            --bs-dark-rgb: 33, 37, 41;
-            --tech-glow-start: rgba(7, 28, 126, 0.9);
-            --tech-glow-end: rgba(154, 0, 255, 0.9);
-            --finance-primary: #004D40;
-            --finance-secondary: #C8A464;
-            --arts-primary: #8C2C2C;
-            --arts-secondary: #FFDDA1;
-            --events-primary: #FF5722;
-            --events-secondary: #FFC107;
-        }
+      :root {
+        --bs-primary: #0d6efd;
+        --bs-primary-rgb: 13, 110, 253;
+        --bs-dark-rgb: 33, 37, 41;
+        --tech-glow-start: rgba(7, 28, 126, 0.9);
+        --tech-glow-end: rgba(154, 0, 255, 0.9);
+        --finance-primary: #004d40;
+        --finance-secondary: #c8a464;
+        --arts-primary: #8c2c2c;
+        --arts-secondary: #ffdda1;
+        --events-primary: #ff5722;
+        --events-secondary: #ffc107;
+        --portal-glow-start: rgba(209, 223, 18, 0.9);
+        --portal-glow-end: rgba(217, 255, 0, 0.9);
+      }
 
-        /* General styles */
-        body {
-            font-family: 'Inter', sans-serif;
-            position: relative;
-            background-color: #f8f9fa;
-        }
+      /* General styles */
+      body {
+        font-family: "Inter", sans-serif;
+        position: relative;
+        background-color: #f8f9fa;
+      }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-        }
-        
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            margin-bottom: 50px;
-        }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+      }
 
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
+      .section-padding {
+        padding: 80px 0;
+      }
 
-        /* Navbar */
-        .navbar {
-            transition: background-color 0.3s ease-in-out;
-            padding: 1rem 1.5rem;
-        }
+      .section-title {
+        margin-bottom: 50px;
+      }
 
-        .navbar-brand {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-        }
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Navbar */
 
-        .nav-link {
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
-        }
-        
-        .nav-link.active, .nav-link:hover {
-            color: var(--bs-primary) !important;
-        }
-        
-        /* Hero Section */
-        #hero {
-            position: relative;
-            height: 100vh;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: linear-gradient(135deg, #020024 0%, #090979 35%, #00d4ff 100%);
-        }
+      .navbar {
+        transition: background-color 0.3s ease-in-out;
+        padding: 1rem 1.5rem;
+      }
 
-        #hero .container {
-            position: relative;
-            z-index: 2;
-        }
-        
-        #hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            font-weight: 900;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
+      .navbar-brand {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
 
-        #hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin: 20px auto 30px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
+      .dropdown-menu,
+      .dropdown-item {
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        transition: color 0.3s;
+      }
 
-        .btn-hero {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
+      .nav-link {
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1px;
+        transition: color 0.3s;
+      }
 
-        .btn-hero:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        
-        /* Animated shapes for hero */
-        .animated-shape {
-            position: absolute;
-            z-index: 1;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 20s infinite linear;
-        }
-        .shape1 { width: 150px; height: 150px; top: 10%; left: 15%; animation-duration: 25s; }
-        .shape2 { width: 80px; height: 80px; top: 70%; left: 10%; animation-duration: 18s; animation-delay: 2s; }
-        .shape3 { width: 50px; height: 50px; top: 25%; right: 15%; animation-duration: 22s; animation-delay: 4s; border-radius: 30%;}
-        .shape4 { width: 120px; height: 120px; top: 60%; right: 20%; animation-duration: 20s; animation-delay: 1s; }
-        .shape5 { width: 60px; height: 60px; top: 40%; left: 50%; transform: translateX(-50%); animation-duration: 15s; animation-delay: 3s; border-radius: 10%;}
+      .nav-link.active,
+      .nav-link:hover,
+      .dropdown-item:hover {
+        color: var(--bs-primary) !important;
+      }
 
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
-            50% { transform: translateY(-50px) rotate(180deg); opacity: 0.3; }
-            100% { transform: translateY(0) rotate(360deg); opacity: 0.7; }
-        }
+      /* Hero Section */
+      #hero {
+        position: relative;
+        height: 100vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          #020024 0%,
+          #090979 35%,
+          #00d4ff 100%
+        );
+      }
 
-        /* About Section */
-        #about img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
+      #hero .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      #hero h1 {
+        font-family: "Orbitron", sans-serif;
+        font-size: 3rem;
+        font-weight: 900;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      #hero p {
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin: 20px auto 30px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-hero {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        padding: 12px 30px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-hero:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Animated shapes for hero */
+      .animated-shape {
+        position: absolute;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: float 20s infinite linear;
+      }
+      .shape1 {
+        width: 150px;
+        height: 150px;
+        top: 10%;
+        left: 15%;
+        animation-duration: 25s;
+      }
+      .shape2 {
+        width: 80px;
+        height: 80px;
+        top: 70%;
+        left: 10%;
+        animation-duration: 18s;
+        animation-delay: 2s;
+      }
+      .shape3 {
+        width: 50px;
+        height: 50px;
+        top: 25%;
+        right: 15%;
+        animation-duration: 22s;
+        animation-delay: 4s;
+        border-radius: 30%;
+      }
+      .shape4 {
+        width: 120px;
+        height: 120px;
+        top: 60%;
+        right: 20%;
+        animation-duration: 20s;
+        animation-delay: 1s;
+      }
+      .shape5 {
+        width: 60px;
+        height: 60px;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-duration: 15s;
+        animation-delay: 3s;
+        border-radius: 10%;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.7;
         }
-            /* Faculty Section Styles */
-    .faculty-card {
+        50% {
+          transform: translateY(-50px) rotate(180deg);
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(0) rotate(360deg);
+          opacity: 0.7;
+        }
+      }
+
+      /* About Section */
+      #about img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+      }
+      /* Faculty Section Styles */
+      .faculty-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         border-radius: 15px;
         overflow: hidden;
-    }
-    
-    .faculty-card:hover {
+      }
+
+      .faculty-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
-    }
-    
-    .faculty-card .card-img-top {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+      }
+
+      .faculty-card .card-img-top {
         height: 250px;
         object-fit: cover;
-    }
-    
-    .faculty-overlay {
-        background: rgba(0,0,0,0.7);
+      }
+
+      .faculty-overlay {
+        background: rgba(0, 0, 0, 0.7);
         opacity: 0;
         transition: opacity 0.3s ease;
-    }
-    
-    .faculty-card:hover .faculty-overlay {
+      }
+
+      .faculty-card:hover .faculty-overlay {
         opacity: 1;
-    }
-    
-    .faculty-badges .badge {
+      }
+
+      .faculty-badges .badge {
         font-size: 0.7rem;
         margin: 2px;
-    }
-    
-    .social-links a {
+      }
+
+      .social-links a {
         transition: color 0.3s ease;
-    }
-    
-    .social-links a:hover {
+      }
+
+      .social-links a:hover {
         color: var(--bs-primary) !important;
-    }
-        /* Societies Section */
-        .society-card {
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            border: none;
-            position: relative;
-        }
+      }
+      /* Societies Section */
+      .society-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        border: none;
+        position: relative;
+      }
 
-        .society-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
-        .society-card .card-body {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .society-card .card-title {
-            font-weight: 700;
-        }
-        
-        .society-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-            transition: transform 0.3s ease;
-        }
+      .society-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
 
-        .society-card:hover .icon {
-            transform: scale(1.1);
-        }
+      .society-card .card-body {
+        position: relative;
+        z-index: 2;
+      }
 
-        /* Tech Society */
-        #tech-card {
-            background-color: #0c0c2c;
-            color: #e0e0e0;
-            box-shadow: 0 0 15px rgba(100, 100, 255, 0.3);
-        }
-        #tech-card .card-title { font-family: 'Orbitron', sans-serif; }
-        #tech-card .icon { color: #4d94ff; }
-        #tech-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: radial-gradient(circle, var(--tech-glow-start), transparent 70%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: 1;
-        }
-        #tech-card:hover::before { opacity: 0.5; }
-        .modal-tech .modal-content { background: #0c0c2c; color: white; border: 1px solid #4d94ff; }
-        .modal-tech .modal-header { border-bottom: 1px solid #4d94ff; }
-        .modal-tech .btn-close { filter: invert(1); }
+      .society-card .card-title {
+        font-weight: 700;
+      }
 
+      .society-card .icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+        transition: transform 0.3s ease;
+      }
 
-        /* Finance Society */
-        #finance-card {
-            background-color: var(--finance-primary);
-            color: #fff;
-            box-shadow: 0 0 15px rgba(200, 164, 100, 0.3);
-        }
-        #finance-card .card-title { font-family: 'Poppins', sans-serif; }
-        #finance-card p { font-family: 'Lora', serif; }
-        #finance-card .icon { color: var(--finance-secondary); }
-        .modal-finance .modal-content { background: var(--finance-primary); color: white; border: 1px solid var(--finance-secondary); }
-        .modal-finance .modal-header { border-bottom: 1px solid var(--finance-secondary); }
-        .modal-finance .btn-close { filter: invert(1); }
+      .society-card:hover .icon {
+        transform: scale(1.1);
+      }
 
-        /* Arts & Culture Society */
-        #arts-card {
-            background-color: var(--arts-secondary);
-            color: var(--arts-primary);
-            box-shadow: 0 0 15px rgba(140, 44, 44, 0.2);
-        }
-        #arts-card .card-title { font-family: 'Pacifico', cursive; font-size: 2.2rem;}
-        #arts-card p { font-family: 'Montserrat', sans-serif; }
-        #arts-card .icon { color: var(--arts-primary); }
-        .modal-arts .modal-content { background: var(--arts-secondary); color: var(--arts-primary); border: 1px solid var(--arts-primary); }
-        .modal-arts .modal-header { border-bottom: 1px solid var(--arts-primary); }
+      /* Tech Society */
+      #tech-card {
+        background-color: #0c0c2c;
+        color: #e0e0e0;
+        box-shadow: 0 0 15px rgba(100, 100, 255, 0.3);
+      }
+      #tech-card .card-title {
+        font-family: "Orbitron", sans-serif;
+      }
+      #tech-card .icon {
+        color: #4d94ff;
+      }
+      #tech-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          var(--tech-glow-start),
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: 1;
+      }
+      #tech-card:hover::before {
+        opacity: 0.5;
+      }
+      .modal-tech .modal-content {
+        background: #0c0c2c;
+        color: white;
+        border: 1px solid #4d94ff;
+      }
+      .modal-tech .modal-header {
+        border-bottom: 1px solid #4d94ff;
+      }
+      .modal-tech .btn-close {
+        filter: invert(1);
+      }
 
-        /* Events Management Society */
-        #events-card {
-            background-color: var(--events-primary);
-            color: #fff;
-            box-shadow: 0 0 15px rgba(255, 87, 34, 0.3);
-        }
-        #events-card .card-title { font-family: 'Baloo 2', cursive; font-size: 1.8rem;}
-        #events-card p { font-family: 'Nunito', sans-serif; }
-        #events-card .icon { color: var(--events-secondary); }
-        .modal-events .modal-content { background: var(--events-primary); color: white; border: 1px solid var(--events-secondary); }
-        .modal-events .modal-header { border-bottom: 1px solid var(--events-secondary); }
-        .modal-events .btn-close { filter: invert(1); }
+      /* Finance Society */
+      #finance-card {
+        background-color: var(--finance-primary);
+        color: #fff;
+        box-shadow: 0 0 15px rgba(200, 164, 100, 0.3);
+      }
+      #finance-card .card-title {
+        font-family: "Poppins", sans-serif;
+      }
+      #finance-card p {
+        font-family: "Lora", serif;
+      }
+      #finance-card .icon {
+        color: var(--finance-secondary);
+      }
+      .modal-finance .modal-content {
+        background: var(--finance-primary);
+        color: white;
+        border: 1px solid var(--finance-secondary);
+      }
+      .modal-finance .modal-header {
+        border-bottom: 1px solid var(--finance-secondary);
+      }
+      .modal-finance .btn-close {
+        filter: invert(1);
+      }
 
-        /* Events Section */
-        #events {
-            background-color: #ffffff;
-        }
-        .event-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
+      /* Arts & Culture Society */
+      #arts-card {
+        background-color: var(--arts-secondary);
+        color: var(--arts-primary);
+        box-shadow: 0 0 15px rgba(140, 44, 44, 0.2);
+      }
+      #arts-card .card-title {
+        font-family: "Pacifico", cursive;
+        font-size: 2.2rem;
+      }
+      #arts-card p {
+        font-family: "Montserrat", sans-serif;
+      }
+      #arts-card .icon {
+        color: var(--arts-primary);
+      }
+      .modal-arts .modal-content {
+        background: var(--arts-secondary);
+        color: var(--arts-primary);
+        border: 1px solid var(--arts-primary);
+      }
+      .modal-arts .modal-header {
+        border-bottom: 1px solid var(--arts-primary);
+      }
 
-        /* Gallery Section */
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-        }
+      /* Events Management Society */
+      #events-card {
+        background-color: var(--events-primary);
+        color: #fff;
+        box-shadow: 0 0 15px rgba(255, 87, 34, 0.3);
+      }
+      #events-card .card-title {
+        font-family: "Baloo 2", cursive;
+        font-size: 1.8rem;
+      }
+      #events-card p {
+        font-family: "Nunito", sans-serif;
+      }
+      #events-card .icon {
+        color: var(--events-secondary);
+      }
+      .modal-events .modal-content {
+        background: var(--events-primary);
+        color: white;
+        border: 1px solid var(--events-secondary);
+      }
+      .modal-events .modal-header {
+        border-bottom: 1px solid var(--events-secondary);
+      }
+      .modal-events .btn-close {
+        filter: invert(1);
+      }
+      /*Student Portal*/
+      #portal-card {
+        background-color: #f07624;
+        color: #e0e0e0;
+        box-shadow: 0 0 15px rgba(100, 100, 255, 0.3);
+        align-items: center;
+      }
+      #portal-card .card-title {
+        font-family: "Orbitron", sans-serif;
+      }
+      #portal-card .icon {
+        color: #bbff4d;
+      }
+      #portal-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle,
+          var(--portal-glow-start),
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: 1;
+        pointer-events: none; /* ✅ Add this */
+      }
+      #portal-card:hover::before {
+        opacity: 0.5;
+      }
 
-        .gallery-item img {
-            transition: transform 0.4s ease;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+      .modal-portal .modal-content {
+        background: #f07624;
+        color: white;
+        border: 1px solid #ff4d97;
+      }
+      .modal-portal .modal-header {
+        border-bottom: 1px solid #4d94ff;
+      }
+      .modal-portal .btn-close {
+        filter: invert(1);
+      }
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
+      /* Events Section */
+      #events {
+        background-color: #ffffff;
+      }
+      .event-card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+      .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
 
-        .gallery-item .overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
+      /* Gallery Section */
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+      }
 
-        .gallery-item .overlay-content {
-            transform: translateY(20px);
-            transition: transform 0.4s ease;
-        }
+      .gallery-item img {
+        transition: transform 0.4s ease;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-        .gallery-item:hover .overlay-content {
-            transform: translateY(0);
-        }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
 
-        /* Contact Section */
-        #contact {
-            background-color: #ffffff;
-        }
-        .contact-form .form-control {
-            border-radius: 10px;
-            padding: 12px;
-        }
-        .contact-form .form-control:focus {
-            box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
-            border-color: rgba(var(--bs-primary-rgb), 0.5);
-        }
-        #map {
-            border-radius: 15px;
-            overflow: hidden;
-            min-height: 400px;
-            height: 100%;
-        }
-        .social-icons a {
-            font-size: 1.5rem;
-            color: var(--bs-dark);
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-        .social-icons a:hover {
-            color: var(--bs-primary);
-        }
+      .gallery-item .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+      }
 
-        /* Footer */
-        footer {
-            background-color: #212529;
-            color: rgba(255,255,255,0.7);
-        }
+      .gallery-item:hover .overlay {
+        opacity: 1;
+      }
 
-        footer h5 {
-            color: white;
-            margin-bottom: 1rem;
-        }
+      .gallery-item .overlay-content {
+        transform: translateY(20px);
+        transition: transform 0.4s ease;
+      }
 
-        footer a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+      .gallery-item:hover .overlay-content {
+        transform: translateY(0);
+      }
 
-        footer a:hover {
-            color: white;
-        }
-        
-        @media (max-width: 991.98px) {
-            #hero h1 {
-                font-size: 2.5rem;
-            }
-            #hero p {
-                font-size: 1.1rem;
-            }
-        }
-        
-        @media (max-width: 767.98px) {
-            .section-padding {
-                padding: 60px 0;
-            }
-            #hero h1 {
-                font-size: 2rem;
-            }
-        }
+      /* Contact Section */
+      #contact {
+        background-color: #ffffff;
+      }
+      .contact-form .form-control {
+        border-radius: 10px;
+        padding: 12px;
+      }
+      .contact-form .form-control:focus {
+        box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+        border-color: rgba(var(--bs-primary-rgb), 0.5);
+      }
+      #map {
+        border-radius: 15px;
+        overflow: hidden;
+        min-height: 400px;
+        height: 100%;
+      }
+      .social-icons a {
+        font-size: 1.5rem;
+        color: var(--bs-dark);
+        margin: 0 10px;
+        transition: color 0.3s ease;
+      }
+      .social-icons a:hover {
+        color: var(--bs-primary);
+      }
 
+      /* Footer */
+      footer {
+        background-color: #212529;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      footer h5 {
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      footer a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: white;
+      }
+
+      @media (max-width: 991.98px) {
+        #hero h1 {
+          font-size: 2.5rem;
+        }
+        #hero p {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .section-padding {
+          padding: 60px 0;
+        }
+        #hero h1 {
+          font-size: 2rem;
+        }
+      }
     </style>
-</head>
-<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
-
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
     <!-- Sticky Navbar -->
-    <nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#hero"><i class="bi bi-building-gear"></i> Computer Engineering</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faculty">Faculty</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#societies">Societies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+    <nav
+      id="mainNav"
+      class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#hero"
+          ><i class="bi bi-building-gear"></i> Computer Engineering</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#hero">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#about"
+                id="aboutDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li>
+                  <a class="dropdown-item" href="#about">Vision and Mission</a>
+                </li>
+                <li><a class="dropdown-item" href="#about">History</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#faculty"
+                id="facultyDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Faculty
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="facultyDropdown">
+                <li>
+                  <a class="dropdown-item" href="#hod">Head of Department</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#dsa"
+                    >Director of Student Affairs</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#instructors"
+                    >Course Instructors</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#labengineers"
+                    >Lab Engineers</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#societies"
+                id="societiesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Societies
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="societiesDropdown">
+                <li>
+                  <a class="dropdown-item" href="#societies"
+                    >Tech and Social Media</a
+                  >
+                </li>
+                <li><a class="dropdown-item" href="#societies">Finance</a></li>
+                <li>
+                  <a class="dropdown-item" href="#societies"
+                    >Arts and Culture</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#societies"
+                    >Events Management</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#portal" title="Newly launched"
+                >Student Portal</a
+              >
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#highlights"
+                id="highlightsDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Highlights
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="highlightsDropdown">
+                <li>
+                  <a class="dropdown-item" href="#resources"
+                    >Resources & Downloads</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#projects"
+                    >Projects & Achievements</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#events">News & Events</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <header id="hero" class="text-center">
-        <!-- Animated Shapes -->
-        <div class="animated-shape shape1"></div>
-        <div class="animated-shape shape2"></div>
-        <div class="animated-shape shape3"></div>
-        <div class="animated-shape shape4"></div>
-        <div class="animated-shape shape5"></div>
-        
-        <div class="container">
-            <h1 class="display-3">Welcome to the Future of Innovation</h1>
-            <p class="lead">Explore your passion, join our communities, and shape the world of tomorrow with us.</p>
-            <a href="#societies" class="btn btn-primary btn-lg btn-hero">Discover Our Societies</a>
-        </div>
+      <!-- Animated Shapes -->
+      <div class="animated-shape shape1"></div>
+      <div class="animated-shape shape2"></div>
+      <div class="animated-shape shape3"></div>
+      <div class="animated-shape shape4"></div>
+      <div class="animated-shape shape5"></div>
+
+      <div class="container">
+        <h1 class="display-3">Welcome to the Future of Innovation</h1>
+        <p class="lead">
+          Explore your passion, join our communities, and shape the world of
+          tomorrow with us.
+        </p>
+        <a href="#societies" class="btn btn-primary btn-lg btn-hero"
+          >Discover Our Societies</a
+        >
+      </div>
     </header>
 
     <!-- About Section -->
     <section id="about" class="section-padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nro6hbPw450aLVtm8OHelisU1aXJz7ougHne8ALUb5aIx03t-3QBqJtasTWHrl5wtd1UyeTkY5XtT57N8aIhLI9hYakDLYpKTniLiVM_HW-HI1nZsPbZZjuq00IG9zQOOYOG3ZK4Q=w253-h100-k-no" alt="Department Illustration" class="img-fluid shadow">
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="section-title">About Our Department</h2>
-                    <p class="lead">We are a collective of thinkers, creators, and leaders dedicated to pushing the boundaries of knowledge and technology.</p>
-                    <p>Our department fosters a unique environment where students are encouraged to collaborate across disciplines. From coding the next groundbreaking app to analyzing market trends, orchestrating cultural festivals, and managing large-scale events, our students are at the forefront of innovation. We believe in learning by doing, and our vibrant student societies are the heart of this philosophy.</p>
-                    <a href="#contact" class="btn btn-outline-primary mt-3">Learn More</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <img
+              src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nro6hbPw450aLVtm8OHelisU1aXJz7ougHne8ALUb5aIx03t-3QBqJtasTWHrl5wtd1UyeTkY5XtT57N8aIhLI9hYakDLYpKTniLiVM_HW-HI1nZsPbZZjuq00IG9zQOOYOG3ZK4Q=w253-h100-k-no"
+              alt="Department Illustration"
+              class="img-fluid shadow"
+            />
+          </div>
+          <div class="col-lg-6">
+            <h2 class="section-title">About Our Department</h2>
+            <h4>Vision and Mission</h4>
+            <p class="lead">
+              We are a collective of thinkers, creators, and leaders dedicated
+              to pushing the boundaries of knowledge and technology.
+            </p>
+            <h4>History</h4>
+            <p>
+              Our department fosters a unique environment where students are
+              encouraged to collaborate across disciplines. From coding the next
+              groundbreaking app to analyzing market trends, orchestrating
+              cultural festivals, and managing large-scale events, our students
+              are at the forefront of innovation. We believe in learning by
+              doing, and our vibrant student societies are the heart of this
+              philosophy.
+            </p>
+            <a href="#contact" class="btn btn-outline-primary mt-3"
+              >Learn More</a
+            >
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Faculty Section -->
     <section id="faculty" class="section-padding bg-light">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Meet Our Faculty</h2>
-                <p class="lead mb-5">Our distinguished faculty members are experts in their fields, dedicated to mentoring the next generation of computer engineers.</p>
-            </div>
-            
-            <div class="row g-4">
-                <!-- Faculty Member 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card faculty-card h-100 border-0 shadow-sm">
-                        <div class="card-img-top position-relative overflow-hidden">
-                            <img src="/images/dr-muhammad-imran-malik.png" class="img-fluid" alt="Dr. Muhammad Imran Malik">
-                            <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <div class="text-center text-white">
-                                    <h5>Areas of Expertise</h5>
-                                    <p class="mb-0">Information and Communication Engineering</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Dr. Muhammad Imran Malik</h5>
-                            <p class="card-subtitle text-primary mb-2">Associate Professor & Department Head</p>
-                            <p class="card-text">Researcher in communication engineering with expertise in advanced network protocols and ICT innovation.</p>
-                            <div class="faculty-badges mb-3">
-                                <span class="badge bg-primary">AI Research</span>
-                                <span class="badge bg-secondary">Machine Learning</span>
-                            </div>
-                            <div class="social-links">
-                                <a href="#" class="text-dark me-2"><i class="bi bi-linkedin"></i></a>
-                                <a href="#" class="text-dark me-2"><i class="bi bi-google"></i></a>
-                                <a href="#" class="text-dark"><i class="bi bi-file-text"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Faculty Member 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card faculty-card h-100 border-0 shadow-sm">
-                        <div class="card-img-top position-relative overflow-hidden">
-                            <img src="/images/engr-muhammad-wasiq.jpg" class="img-fluid" alt="Engr. Muhammad Wasiq">
-                            <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <div class="text-center text-white">
-                                    <h5>Areas of Expertise</h5>
-                                    <p class="mb-0">Operating Systems, Microprocessor Technologies, Embedded Systems</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Engr. Muhammad Wasiq</h5>
-                            <p class="card-subtitle text-primary mb-2">Associate Professor</p>
-                            <p class="card-text">Hardware systems expert with patents in embedded device architecture and IoT applications.</p>
-                            <div class="faculty-badges mb-3">
-                                <span class="badge bg-primary">Microprocessors</span>
-                                <span class="badge bg-secondary">Embedded Systems</span>
-                            </div>
-                            <div class="social-links">
-                                <a href="#" class="text-dark me-2"><i class="bi bi-linkedin"></i></a>
-                                <a href="#" class="text-dark me-2"><i class="bi bi-google"></i></a>
-                                <a href="#" class="text-dark"><i class="bi bi-file-text"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Faculty Member 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card faculty-card h-100 border-0 shadow-sm">
-                        <div class="card-img-top position-relative overflow-hidden">
-                            <img src="/images/mohsin_bhatti.png" class="img-fluid" alt="Engr. mohsin Bhatti">
-                            <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <div class="text-center text-white">
-                                    <h5>Areas of Expertise</h5>
-                                    <p class="mb-0">Digital Transformation, Telecommunication Systems, IT Management</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Engr. Mohsin Bhatti</h5>
-                            <p class="card-subtitle text-primary mb-2">Assistant Professor</p>
-                            <p class="card-text">Blends telecom expertise with business strategy to lead digital transformation initiatives.</p>
-                            <div class="faculty-badges mb-3">
-                                <span class="badge bg-primary">Communication Engineering</span>
-                                <span class="badge bg-secondary">IT Management</span>
-                            </div>
-                            <div class="social-links">
-                                <a href="#" class="text-dark me-2"><i class="bi bi-linkedin"></i></a>
-                                <a href="#" class="text-dark me-2"><i class="bi bi-google"></i></a>
-                                <a href="#" class="text-dark"><i class="bi bi-file-text"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Faculty Member 4 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card faculty-card h-100 border-0 shadow-sm">
-                        <div class="card-img-top position-relative overflow-hidden">
-                            <img src="/images/dr._waqar_ashraf_khan.jpeg" class="img-fluid" alt="Dr. Muhammad Waqar Ashraf">
-                            <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <div class="text-center text-white">
-                                    <h5>Areas of Expertise</h5>
-                                    <p class="mb-0">Computer Networks, Cloud Computing, BlockChain, Machine Learning and IoT</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Dr. Muhammad Waqar Ashraf</h5>
-                            <p class="card-subtitle text-primary mb-2">Assistant Professor</p>
-                            <p class="card-text">Researcher in network optimization and emerging technologies like blockchain and IoT.</p>
-                            <div class="faculty-badges mb-3">
-                                <span class="badge bg-primary">Cloud Computing</span>
-                                <span class="badge bg-secondary">BlockChain</span>
-                            </div>
-                            <div class="social-links">
-                                <a href="#" class="text-dark me-2"><i class="bi bi-linkedin"></i></a>
-                                <a href="#" class="text-dark me-2"><i class="bi bi-google"></i></a>
-                                <a href="#" class="text-dark"><i class="bi bi-file-text"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Faculty Member 5 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card faculty-card h-100 border-0 shadow-sm">
-                        <div class="card-img-top position-relative overflow-hidden">
-                            <img src="/images/dr-yasir-aziz.jpg" class="img-fluid" alt="Dr. Muhammad Yasir Aziz">
-                            <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <div class="text-center text-white">
-                                    <h5>Areas of Expertise</h5>
-                                    <p class="mb-0">Computer Vision, Pattern Recognition, Big Data, Data Science</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Dr. Muhammad Yasir Aziz</h5>
-                            <p class="card-subtitle text-primary mb-2">Assistant Professor</p>
-                            <p class="card-text">Works on scalable algorithms and intelligent systems for vision and recognition tasks.</p>
-                            <div class="faculty-badges mb-3">
-                                <span class="badge bg-primary">Data Science</span>
-                                <span class="badge bg-secondary">Computer Vision</span>
-                            </div>
-                            <div class="social-links">
-                                <a href="#" class="text-dark me-2"><i class="bi bi-linkedin"></i></a>
-                                <a href="#" class="text-dark me-2"><i class="bi bi-google"></i></a>
-                                <a href="#" class="text-dark"><i class="bi bi-file-text"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Faculty Member 6 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card faculty-card h-100 border-0 shadow-sm">
-                        <div class="card-img-top position-relative overflow-hidden">
-                            <img src="/images/dr-umar-chaudhary.jpg" class="img-fluid" alt="Dr. Muhammad Umar Chaudhary">
-                            <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                <div class="text-center text-white">
-                                    <h5>Areas of Expertise</h5>
-                                    <p class="mb-0">Machine Learning, AI, Feature Selection, Recommender Systems, Information Networks</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Dr. Muhammad Umar Chaudhary</h5>
-                            <p class="card-subtitle text-primary mb-2">Assistant Professor</p>
-                            <p class="card-text">Specialist in intelligent algorithms and applied ML for recommender systems.</p>
-                            <div class="faculty-badges mb-3">
-                                <span class="badge bg-primary">AI / ML</span>
-                                <span class="badge bg-secondary">Information Networks</span>
-                            </div>
-                            <div class="social-links">
-                                <a href="#" class="text-dark me-2"><i class="bi bi-linkedin"></i></a>
-                                <a href="#" class="text-dark me-2"><i class="bi bi-google"></i></a>
-                                <a href="#" class="text-dark"><i class="bi bi-file-text"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Hidden Faculty Section -->
-            <div class="row mt-4" id="moreFaculty" style="display:none;">
-                <div class="col-lg-4 col-md-6">
-                        <div class="card faculty-card h-100 border-0 shadow-sm">
-                            <div class="card-img-top position-relative overflow-hidden">
-                                <img src="/images/dr-mudassir-khalil.jpg" class="img-fluid" alt="Dr. Mudassir Khalil">
-                                <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                    <div class="text-center text-white">
-                                        <h5>Areas of Expertise</h5>
-                                        <p class="mb-0">AI, ML, Deep Learning, AR, Data Science</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Dr. Mudassir Khalil</h5>
-                                <p class="card-subtitle text-primary mb-2">Assistant Professor</p>
-                                <p class="card-text">AI researcher with focus on big data and immersive technologies like AR.</p>
-                                <div class="faculty-badges mb-3">
-                                    <span class="badge bg-primary">AI</span>
-                                    <span class="badge bg-secondary">Deep Learning</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card faculty-card h-100 border-0 shadow-sm">
-                            <div class="card-img-top position-relative overflow-hidden">
-                                <img src="/images/dr-shahid-iqbal.png" class="img-fluid" alt="Dr. Shahid Iqbal">
-                                <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                    <div class="text-center text-white">
-                                        <h5>Areas of Expertise</h5>
-                                        <p class="mb-0">Computer Networks, DBMS, WBSN, IoT, AI, ML</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Dr. Shahid Iqbal</h5>
-                                <p class="card-subtitle text-primary mb-2">Assistant Professor</p>
-                                <p class="card-text">Works on communication systems, IoT applications and smart networking.</p>
-                                <div class="faculty-badges mb-3">
-                                    <span class="badge bg-primary">DBMS</span>
-                                    <span class="badge bg-secondary">Computer Networks</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card faculty-card h-100 border-0 shadow-sm">
-                            <div class="card-img-top position-relative overflow-hidden">
-                                <img src="/images/mirza-khurram-baig.jpeg" class="img-fluid" alt="Mirza Khurram Baig">
-                                <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                    <div class="text-center text-white">
-                                        <h5>Areas of Expertise</h5>
-                                        <p class="mb-0">Digital Image Processing, Computer Vision</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Engr. Mirza Khurram Baig</h5>
-                                <p class="card-subtitle text-primary mb-2">Lecturer</p>
-                                <p class="card-text">Lecturer with specialization in image analysis and vision-based computing.</p>
-                                <div class="faculty-badges mb-3">
-                                    <span class="badge bg-primary">Digital Image Processing</span>
-                                    <span class="badge bg-secondary">Computer Vision</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card faculty-card h-100 border-0 shadow-sm">
-                            <div class="card-img-top position-relative overflow-hidden">
-                                <img src="/images/engr-muhammad-baqir.jpg" class="img-fluid" alt="Engr Muhammad Baqir">
-                                <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                    <div class="text-center text-white">
-                                        <h5>Areas of Expertise</h5>
-                                        <p class="mb-0">Deep Learning, ANN, ML, Pattern Recognition, Cognitive Robotics, AI</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Engr Muhammad Baqir</h5>
-                                <p class="card-subtitle text-primary mb-2">Lecturer</p>
-                                <p class="card-text">Researcher in intelligent robotics and neural network–based systems.</p>
-                                <div class="faculty-badges mb-3">
-                                    <span class="badge bg-primary">ANN</span>
-                                    <span class="badge bg-secondary">Cognitive Robotics</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card faculty-card h-100 border-0 shadow-sm">
-                            <div class="card-img-top position-relative overflow-hidden">
-                                <img src="/images/engr-zahid-iqbal.jpg" class="img-fluid" alt="Engr Zahid Iqbal">
-                                <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                    <div class="text-center text-white">
-                                        <h5>Areas of Expertise</h5>
-                                        <p class="mb-0">Artificial Intelligence</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Engr. Muhammad Zahid Iqbal</h5>
-                                <p class="card-subtitle text-primary mb-2">Lecturer</p>
-                                <p class="card-text">Focuses on AI-driven solutions for intelligent automation.</p>
-                                <div class="faculty-badges mb-3">
-                                    <span class="badge bg-primary">AI</span>
-                                    <span class="badge bg-secondary">Deep Learning</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card faculty-card h-100 border-0 shadow-sm">
-                            <div class="card-img-top position-relative overflow-hidden">
-                                <img src="/images/engr-usman-humayun.jpg" class="img-fluid" alt="Engr usman Humayun">
-                                <div class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                                    <div class="text-center text-white">
-                                        <h5>Areas of Expertise</h5>
-                                        <p class="mb-0">Computer Networks, Network Architecture</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Engr Usman Humayun</h5>
-                                <p class="card-subtitle text-primary mb-2">Lecturer</p>
-                                <p class="card-text">Specializes in computer architecture and scalable network systems.</p>
-                                <div class="faculty-badges mb-3">
-                                    <span class="badge bg-primary">Computer Networks</span>
-                                    <span class="badge bg-secondary">Network Architecture</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <div class="text-center mt-5">
-                <a href="#" class="btn btn-primary btn-lg" id="toggleFaculty">View All Faculty Members</a>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Meet Our Faculty</h2>
+          <p class="lead mb-5">
+            Our distinguished faculty members are experts in their fields,
+            dedicated to mentoring the next generation of computer engineers.
+          </p>
         </div>
+
+        <div class="row g-4">
+          <!-- Faculty Member 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div
+                class="card-img-top position-relative overflow-hidden"
+                id="hod"
+              >
+                <img
+                  src="/images/dr-muhammad-imran-malik.png"
+                  class="img-fluid"
+                  alt="Dr. Muhammad Imran Malik"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">
+                      Information and Communication Engineering
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Dr. Muhammad Imran Malik</h5>
+                <p class="card-subtitle text-primary mb-2">
+                  Associate Professor & Department Head
+                </p>
+                <p class="card-text">
+                  Researcher in communication engineering with expertise in
+                  advanced network protocols and ICT innovation.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">AI Research</span>
+                  <span class="badge bg-secondary">Machine Learning</span>
+                </div>
+                <div class="social-links">
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-google"></i
+                  ></a>
+                  <a href="#" class="text-dark"
+                    ><i class="bi bi-file-text"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faculty Member 2 (DSA)-->
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div
+                class="card-img-top position-relative overflow-hidden"
+                id="dsa"
+              >
+                <img
+                  src="/images/dr-shahid-iqbal.png"
+                  class="img-fluid"
+                  alt="Dr. Shahid Iqbal"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">
+                      Computer Networks, DBMS, WBSN, IoT, AI, ML
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Dr. Shahid Iqbal</h5>
+                <p class="card-subtitle text-primary mb-2">
+                  Assistant Professor
+                </p>
+                <p class="card-text">
+                  Works on communication systems, IoT applications and smart
+                  networking.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">DBMS</span>
+                  <span class="badge bg-secondary">Computer Networks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faculty Member 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div class="card-img-top position-relative overflow-hidden">
+                <img
+                  src="/images/mohsin_bhatti.png"
+                  class="img-fluid"
+                  alt="Engr. mohsin Bhatti"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">
+                      Digital Transformation, Telecommunication Systems, IT
+                      Management
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Engr. Mohsin Bhatti</h5>
+                <p class="card-subtitle text-primary mb-2">
+                  Assistant Professor
+                </p>
+                <p class="card-text">
+                  Blends telecom expertise with business strategy to lead
+                  digital transformation initiatives.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary"
+                    >Communication Engineering</span
+                  >
+                  <span class="badge bg-secondary">IT Management</span>
+                </div>
+                <div class="social-links">
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-google"></i
+                  ></a>
+                  <a href="#" class="text-dark"
+                    ><i class="bi bi-file-text"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faculty Member 4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div class="card-img-top position-relative overflow-hidden">
+                <img
+                  src="/images/dr._waqar_ashraf_khan.jpeg"
+                  class="img-fluid"
+                  alt="Dr. Muhammad Waqar Ashraf"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">
+                      Computer Networks, Cloud Computing, BlockChain, Machine
+                      Learning and IoT
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Dr. Muhammad Waqar Ashraf</h5>
+                <p class="card-subtitle text-primary mb-2">
+                  Assistant Professor
+                </p>
+                <p class="card-text">
+                  Researcher in network optimization and emerging technologies
+                  like blockchain and IoT.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">Cloud Computing</span>
+                  <span class="badge bg-secondary">BlockChain</span>
+                </div>
+                <div class="social-links">
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-google"></i
+                  ></a>
+                  <a href="#" class="text-dark"
+                    ><i class="bi bi-file-text"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faculty Member 5 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div class="card-img-top position-relative overflow-hidden">
+                <img
+                  src="/images/dr-yasir-aziz.jpg"
+                  class="img-fluid"
+                  alt="Dr. Muhammad Yasir Aziz"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">
+                      Computer Vision, Pattern Recognition, Big Data, Data
+                      Science
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Dr. Muhammad Yasir Aziz</h5>
+                <p class="card-subtitle text-primary mb-2">
+                  Assistant Professor
+                </p>
+                <p class="card-text">
+                  Works on scalable algorithms and intelligent systems for
+                  vision and recognition tasks.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">Data Science</span>
+                  <span class="badge bg-secondary">Computer Vision</span>
+                </div>
+                <div class="social-links">
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-google"></i
+                  ></a>
+                  <a href="#" class="text-dark"
+                    ><i class="bi bi-file-text"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faculty Member 6 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div class="card-img-top position-relative overflow-hidden">
+                <img
+                  src="/images/dr-umar-chaudhary.jpg"
+                  class="img-fluid"
+                  alt="Dr. Muhammad Umar Chaudhary"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">
+                      Machine Learning, AI, Feature Selection, Recommender
+                      Systems, Information Networks
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Dr. Muhammad Umar Chaudhary</h5>
+                <p class="card-subtitle text-primary mb-2">
+                  Assistant Professor
+                </p>
+                <p class="card-text">
+                  Specialist in intelligent algorithms and applied ML for
+                  recommender systems.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">AI / ML</span>
+                  <span class="badge bg-secondary">Information Networks</span>
+                </div>
+                <div class="social-links">
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-google"></i
+                  ></a>
+                  <a href="#" class="text-dark"
+                    ><i class="bi bi-file-text"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Hidden Faculty Section -->
+        <div class="row mt-4" id="moreFaculty" style="display: none">
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div class="card-img-top position-relative overflow-hidden">
+                <img
+                  src="/images/dr-mudassir-khalil.jpg"
+                  class="img-fluid"
+                  alt="Dr. Mudassir Khalil"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">AI, ML, Deep Learning, AR, Data Science</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Dr. Mudassir Khalil</h5>
+                <p class="card-subtitle text-primary mb-2">
+                  Assistant Professor
+                </p>
+                <p class="card-text">
+                  AI researcher with focus on big data and immersive
+                  technologies like AR.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">AI</span>
+                  <span class="badge bg-secondary">Deep Learning</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Sir Wasiq-->
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div class="card-img-top position-relative overflow-hidden">
+                <img
+                  src="/images/engr-muhammad-wasiq.jpg"
+                  class="img-fluid"
+                  alt="Engr. Muhammad Wasiq"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">
+                      Operating Systems, Microprocessor Technologies, Embedded
+                      Systems
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Engr. Muhammad Wasiq</h5>
+                <p class="card-subtitle text-primary mb-2">
+                  Associate Professor
+                </p>
+                <p class="card-text">
+                  Hardware systems expert with patents in embedded device
+                  architecture and IoT applications.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">Microprocessors</span>
+                  <span class="badge bg-secondary">Embedded Systems</span>
+                </div>
+                <div class="social-links">
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                  <a href="#" class="text-dark me-2"
+                    ><i class="bi bi-google"></i
+                  ></a>
+                  <a href="#" class="text-dark"
+                    ><i class="bi bi-file-text"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Sir khurram-->
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div class="card-img-top position-relative overflow-hidden">
+                <img
+                  src="/images/mirza-khurram-baig.jpeg"
+                  class="img-fluid"
+                  alt="Mirza Khurram Baig"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">
+                      Digital Image Processing, Computer Vision
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Engr. Mirza Khurram Baig</h5>
+                <p class="card-subtitle text-primary mb-2">Lecturer</p>
+                <p class="card-text">
+                  Lecturer with specialization in image analysis and
+                  vision-based computing.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">Digital Image Processing</span>
+                  <span class="badge bg-secondary">Computer Vision</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div class="card-img-top position-relative overflow-hidden">
+                <img
+                  src="/images/engr-muhammad-baqir.jpg"
+                  class="img-fluid"
+                  alt="Engr Muhammad Baqir"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">
+                      Deep Learning, ANN, ML, Pattern Recognition, Cognitive
+                      Robotics, AI
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Engr Muhammad Baqir</h5>
+                <p class="card-subtitle text-primary mb-2">Lecturer</p>
+                <p class="card-text">
+                  Researcher in intelligent robotics and neural network–based
+                  systems.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">ANN</span>
+                  <span class="badge bg-secondary">Cognitive Robotics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div class="card-img-top position-relative overflow-hidden">
+                <img
+                  src="/images/engr-zahid-iqbal.jpg"
+                  class="img-fluid"
+                  alt="Engr Zahid Iqbal"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">Artificial Intelligence</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Engr. Muhammad Zahid Iqbal</h5>
+                <p class="card-subtitle text-primary mb-2">Lecturer</p>
+                <p class="card-text">
+                  Focuses on AI-driven solutions for intelligent automation.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">AI</span>
+                  <span class="badge bg-secondary">Deep Learning</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card faculty-card h-100 border-0 shadow-sm">
+              <div class="card-img-top position-relative overflow-hidden">
+                <img
+                  src="/images/engr-usman-humayun.jpg"
+                  class="img-fluid"
+                  alt="Engr usman Humayun"
+                />
+                <div
+                  class="faculty-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                >
+                  <div class="text-center text-white">
+                    <h5>Areas of Expertise</h5>
+                    <p class="mb-0">Computer Networks, Network Architecture</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Engr Usman Humayun</h5>
+                <p class="card-subtitle text-primary mb-2">Lecturer</p>
+                <p class="card-text">
+                  Specializes in computer architecture and scalable network
+                  systems.
+                </p>
+                <div class="faculty-badges mb-3">
+                  <span class="badge bg-primary">Computer Networks</span>
+                  <span class="badge bg-secondary">Network Architecture</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-primary btn-lg" id="toggleFaculty"
+            >View All Faculty Members</a
+          >
+        </div>
+      </div>
     </section>
 
     <!-- Societies Section -->
     <section id="societies" class="section-padding">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Student Societies</h2>
-                <p class="lead mb-5">Find your tribe. Each society offers a unique path to growth and discovery.</p>
-            </div>
-            <div class="row g-4">
-                <!-- Tech Society Card -->
-                <div class="col-lg-3 col-md-6">
-                    <div id="tech-card" class="card h-100 society-card text-center p-4" data-bs-toggle="modal" data-bs-target="#techModal">
-                        <div class="card-body">
-                            <span class="icon"><i class="bi bi-cpu-fill"></i></span>
-                            <h5 class="card-title">Tech Society</h5>
-                            <p>Code, innovate, and build the future. Join us for hackathons, workshops, and guest lectures.</p>
-                        </div>
-                        <a href="#" class="btn btn-outline-primary mt-3">What we do</a>
-                    </div>
-                </div>
-                <!-- Finance Society Card -->
-                <div class="col-lg-3 col-md-6">
-                    <div id="finance-card" class="card h-100 society-card text-center p-4" data-bs-toggle="modal" data-bs-target="#financeModal">
-                        <div class="card-body">
-                            <span class="icon"><i class="bi bi-graph-up-arrow"></i></span>
-                            <h5 class="card-title">Finance Society</h5>
-                            <p>Responsible for collecting, managing, and reporting finances with transparency.</p>
-                        </div>
-                        <a href="#" class="btn btn-outline-light mt-3">What we do</a>
-                    </div>
-                </div>
-                <!-- Arts & Culture Card -->
-                <div class="col-lg-3 col-md-6">
-                    <div id="arts-card" class="card h-100 society-card text-center p-4" data-bs-toggle="modal" data-bs-target="#artsModal">
-                        <div class="card-body">
-                            <span class="icon"><i class="bi bi-palette-fill"></i></span>
-                            <h5 class="card-title">Arts & Culture</h5>
-                            <p>Express yourself. Celebrate creativity through music, drama, literature, and visual arts.</p>
-                        </div>
-                        <a href="#" class="btn btn-outline-light mt-3">What we do</a>
-                    </div>
-                </div>
-                <!-- Events Management Card -->
-                <div class="col-lg-3 col-md-6">
-                    <div id="events-card" class="card h-100 society-card text-center p-4" data-bs-toggle="modal" data-bs-target="#eventsModal">
-                        <div class="card-body">
-                            <span class="icon"><i class="bi bi-calendar-check-fill"></i></span>
-                            <h5 class="card-title">Events Crew</h5>
-                            <p>Make it happen. Plan, organize, and execute unforgettable events for the entire campus.</p>
-                        </div>
-                        <a href="#" class="btn btn-outline-warning mt-3">What we do</a>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Student Societies</h2>
+          <p class="lead mb-5">
+            Find your tribe. Each society offers a unique path to growth and
+            discovery.
+          </p>
         </div>
+        <div class="row g-4">
+          <!-- Tech Society Card -->
+          <div class="col-lg-3 col-md-6">
+            <div
+              id="tech-card"
+              class="card h-100 society-card text-center p-4"
+              data-bs-toggle="modal"
+              data-bs-target="#techModal"
+            >
+              <div class="card-body">
+                <span class="icon"><i class="bi bi-cpu-fill"></i></span>
+                <h5 class="card-title">Tech Society</h5>
+                <p>
+                  Code, innovate, and build the future. Join us for hackathons,
+                  workshops, and guest lectures.
+                </p>
+              </div>
+              <a href="#societies" class="btn btn-outline-primary mt-3"
+                >What we do</a
+              >
+            </div>
+          </div>
+          <!-- Finance Society Card -->
+          <div class="col-lg-3 col-md-6">
+            <div
+              id="finance-card"
+              class="card h-100 society-card text-center p-4"
+              data-bs-toggle="modal"
+              data-bs-target="#financeModal"
+            >
+              <div class="card-body">
+                <span class="icon"><i class="bi bi-graph-up-arrow"></i></span>
+                <h5 class="card-title">Finance Society</h5>
+                <p>
+                  Responsible for collecting, managing, and reporting finances
+                  with transparency.
+                </p>
+              </div>
+              <a href="#societies" class="btn btn-outline-light mt-3"
+                >What we do</a
+              >
+            </div>
+          </div>
+          <!-- Arts & Culture Card -->
+          <div class="col-lg-3 col-md-6">
+            <div
+              id="arts-card"
+              class="card h-100 society-card text-center p-4"
+              data-bs-toggle="modal"
+              data-bs-target="#artsModal"
+            >
+              <div class="card-body">
+                <span class="icon"><i class="bi bi-palette-fill"></i></span>
+                <h5 class="card-title">Arts & Culture</h5>
+                <p>
+                  Express yourself. Celebrate creativity through music, drama,
+                  literature, and visual arts.
+                </p>
+              </div>
+              <a href="#societies" class="btn btn-outline-light mt-3"
+                >What we do</a
+              >
+            </div>
+          </div>
+          <!-- Events Management Card -->
+          <div class="col-lg-3 col-md-6">
+            <div
+              id="events-card"
+              class="card h-100 society-card text-center p-4"
+              data-bs-toggle="modal"
+              data-bs-target="#eventsModal"
+            >
+              <div class="card-body">
+                <span class="icon"
+                  ><i class="bi bi-calendar-check-fill"></i
+                ></span>
+                <h5 class="card-title">Events Crew</h5>
+                <p>
+                  Make it happen. Plan, organize, and execute unforgettable
+                  events for the entire campus.
+                </p>
+              </div>
+              <a href="#societies" class="btn btn-outline-warning mt-3"
+                >What we do</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
     <!-- Society Modals -->
     <!-- Tech Modal -->
     <div class="modal fade" id="techModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-tech">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-family: 'Orbitron', sans-serif;"><i class="bi bi-cpu-fill me-2"></i>Tech Society</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Welcome to the bleeding edge. Our society is for anyone passionate about technology, from software development and AI to cybersecurity and robotics. We host weekly coding challenges, workshops on the latest frameworks, and talks from industry leaders. Your journey to becoming a tech visionary starts here.</p>
-                </div>
-            </div>
+      <div class="modal-dialog modal-dialog-centered modal-tech">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="font-family: 'Orbitron', sans-serif">
+              <i class="bi bi-cpu-fill me-2"></i>Tech Society
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Welcome to the bleeding edge. Our society is for anyone passionate
+              about technology, from software development and AI to
+              cybersecurity and robotics. We host weekly coding challenges,
+              workshops on the latest frameworks, and talks from industry
+              leaders. Your journey to becoming a tech visionary starts here.
+            </p>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Finance Modal -->
     <div class="modal fade" id="financeModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-finance">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-family: 'Poppins', sans-serif;"><i class="bi bi-graph-up-arrow me-2"></i>Finance Society</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p style="font-family: 'Lora', serif;">The Finance Society empowers students to master financial skills by collecting and managing funds, fostering learning through competitions and seminars, and building networks with industry professionals.</p>
-                </div>
-            </div>
+      <div class="modal-dialog modal-dialog-centered modal-finance">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="font-family: 'Poppins', sans-serif">
+              <i class="bi bi-graph-up-arrow me-2"></i>Finance Society
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p style="font-family: 'Lora', serif">
+              The Finance Society empowers students to master financial skills
+              by collecting and managing funds, fostering learning through
+              competitions and seminars, and building networks with industry
+              professionals.
+            </p>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Arts Modal -->
     <div class="modal fade" id="artsModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-arts">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-family: 'Pacifico', cursive; font-size: 2rem;"><i class="bi bi-palette-fill me-2"></i>Arts & Culture Society</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p style="font-family: 'Montserrat', sans-serif;">Unleash your creative spirit! The Arts & Culture society is a vibrant community for painters, poets, musicians, and performers. We organize open mic nights, art exhibitions, theater productions, and cultural festivals that enrich campus life. Join us to collaborate, create, and inspire.</p>
-                </div>
-            </div>
+      <div class="modal-dialog modal-dialog-centered modal-arts">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              style="font-family: 'Pacifico', cursive; font-size: 2rem"
+            >
+              <i class="bi bi-palette-fill me-2"></i>Arts & Culture Society
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p style="font-family: 'Montserrat', sans-serif">
+              Unleash your creative spirit! The Arts & Culture society is a
+              vibrant community for painters, poets, musicians, and performers.
+              We organize open mic nights, art exhibitions, theater productions,
+              and cultural festivals that enrich campus life. Join us to
+              collaborate, create, and inspire.
+            </p>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Events Modal -->
     <div class="modal fade" id="eventsModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-events">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-family: 'Baloo 2', cursive; font-size: 1.5rem;"><i class="bi bi-calendar-check-fill me-2"></i>Events Crew</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p style="font-family: 'Nunito', sans-serif;">We are the architects of experience. The Events Crew is the dynamic team behind the department's most exciting happenings, from formal galas and academic conferences to concerts and campus-wide competitions. Gain hands-on experience in logistics, marketing, and team management.</p>
-                </div>
-            </div>
+      <div class="modal-dialog modal-dialog-centered modal-events">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              style="font-family: 'Baloo 2', cursive; font-size: 1.5rem"
+            >
+              <i class="bi bi-calendar-check-fill me-2"></i>Events Crew
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p style="font-family: 'Nunito', sans-serif">
+              We are the architects of experience. The Events Crew is the
+              dynamic team behind the department's most exciting happenings,
+              from formal galas and academic conferences to concerts and
+              campus-wide competitions. Gain hands-on experience in logistics,
+              marketing, and team management.
+            </p>
+          </div>
         </div>
+      </div>
     </div>
+
+    <!-- Portal Section -->
+    <section id="portal" class="section-padding">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Student Portal</h2>
+          <p class="lead mb-5">
+            Log in to your LMS through a single student portal. Handle
+            attendance, coursework, assignments, and learning resources without
+            hassle.
+          </p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <!-- Portal Card -->
+          <div class="col-lg-3 col-md-6">
+            <div
+              id="portal-card"
+              class="card h-100 society-card text-center p-4 position-relative"
+            >
+              <div class="card-body">
+                <span class="icon"><i class="bi bi-book-fill"></i></span>
+                <h5 class="card-title">
+                  LMS
+                  <span class="badge bg-success text-light ms-2">Active</span>
+                </h5>
+                <p>
+                  Access the student portal to manage attendance, grades,
+                  timelines, calendar, profiles, and semester details all in one
+                  place.
+                </p>
+              </div>
+              <a
+                href="https://portal.bzu.edu.pk"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary mt-3"
+              >
+                Access Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Events/News Section -->
     <section id="events" class="section-padding">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Latest News & Events</h2>
-                <p class="lead mb-5">Stay updated with what's happening in our department.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card event-card h-100">
-                        <img src="/Events/Milad-Un-Nabi.jpg" class="card-img-top" alt="Event 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Annual Milad Un Nabi (P.B.U.H)</h5>
-                            <p class="card-text text-muted">Sep 30, 2025 | Arts & Culture | Events Crew</p>
-                            <p class="card-text">
-                                With hearts full of devotion and gratitude, our department is honored to hold a Milad-un-Nabi ﷺ. This gathering reflects our deep human love and reverence for the Prophet Muhammad ﷺ , a love that transcends time and unites us in following his mercy, kindness, and guidance for humanity.
-                            </p>
-                            <!-- <a href="#" class="btn btn-sm btn-primary">Read More</a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card event-card h-100">
-                        <img src="https://placehold.co/600x400/27AE60/FFFFFF?text=Investment+Panel" class="card-img-top" alt="Event 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Front End development (Workshop)</h5>
-                            <p class="card-text text-muted">Upcoming soon | Tech Society</p>
-                            <p class="card-text">Our department is excited to host an upcoming Front-End Development Workshop designed to equip students with modern web development skills. This hands-on session will cover the essentials of HTML, CSS, and JavaScript, empowering participants to design interactive, user-friendly websites and kick-start their journey into the world of web technologies.</p>
-                            <!-- <a href="#" class="btn btn-sm btn-primary">Read More</a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card event-card h-100">
-                        <img src="https://placehold.co/600x400/D35400/FFFFFF?text=Cultural+Night" class="card-img-top" alt="Event 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Annual Bonfire Night</h5>
-                            <p class="card-text text-muted">Coming Soon | Arts & Culture | Events Crew</p>
-                            <p class="card-text">A spectacular evening celebrating the diverse talents of our students through music, dance, and drama.</p>
-                            <!-- <a href="#" class="btn btn-sm btn-primary">Read More</a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Latest News & Events</h2>
+          <p class="lead mb-5">
+            Stay updated with what's happening in our department.
+          </p>
         </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card event-card h-100">
+              <img
+                src="/Events/Milad-Un-Nabi.jpg"
+                class="card-img-top"
+                alt="Event 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Annual Milad Un Nabi (P.B.U.H)</h5>
+                <p class="card-text text-muted">
+                  Sep 30, 2025 | Arts & Culture | Events Crew
+                </p>
+                <p class="card-text">
+                  With hearts full of devotion and gratitude, our department is
+                  honored to hold a Milad-un-Nabi ﷺ. This gathering reflects our
+                  deep human love and reverence for the Prophet Muhammad ﷺ , a
+                  love that transcends time and unites us in following his
+                  mercy, kindness, and guidance for humanity.
+                </p>
+                <!-- <a href="#" class="btn btn-sm btn-primary">Read More</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card event-card h-100">
+              <img
+                src="https://placehold.co/600x400/27AE60/FFFFFF?text=Investment+Panel"
+                class="card-img-top"
+                alt="Event 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Front End development (Workshop)</h5>
+                <p class="card-text text-muted">Upcoming soon | Tech Society</p>
+                <p class="card-text">
+                  Our department is excited to host an upcoming Front-End
+                  Development Workshop designed to equip students with modern
+                  web development skills. This hands-on session will cover the
+                  essentials of HTML, CSS, and JavaScript, empowering
+                  participants to design interactive, user-friendly websites and
+                  kick-start their journey into the world of web technologies.
+                </p>
+                <!-- <a href="#" class="btn btn-sm btn-primary">Read More</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card event-card h-100">
+              <img
+                src="https://placehold.co/600x400/D35400/FFFFFF?text=Cultural+Night"
+                class="card-img-top"
+                alt="Event 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Annual Bonfire Night</h5>
+                <p class="card-text text-muted">
+                  Coming Soon | Arts & Culture | Events Crew
+                </p>
+                <p class="card-text">
+                  A spectacular evening celebrating the diverse talents of our
+                  students through music, dance, and drama.
+                </p>
+                <!-- <a href="#" class="btn btn-sm btn-primary">Read More</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery" class="section-padding">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Moments We Cherish</h2>
-                <p class="lead mb-5">A glimpse into the vibrant life at our department.</p>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-4 col-md-6"><div class="gallery-item"><img src="https://placehold.co/600x600/3498DB/FFFFFF?text=Teamwork" alt="Gallery Image 1"><div class="overlay"><div class="overlay-content"><h5>Collaborative Project</h5><p>Students working on a tech prototype.</p></div></div></div></div>
-                <div class="col-lg-4 col-md-6"><div class="gallery-item"><img src="https://placehold.co/600x600/F1C40F/FFFFFF?text=Celebration" alt="Gallery Image 2"><div class="overlay"><div class="overlay-content"><h5>Event Success</h5><p>The organizing committee after a successful event.</p></div></div></div></div>
-                <div class="col-lg-4 col-md-6"><div class="gallery-item"><img src="https://placehold.co/600x600/E74C3C/FFFFFF?text=Performance" alt="Gallery Image 3"><div class="overlay"><div class="overlay-content"><h5>On Stage</h5><p>A captivating performance during Arts Night.</p></div></div></div></div>
-                <div class="col-lg-4 col-md-6"><div class="gallery-item"><img src="https://placehold.co/600x600/2ECC71/FFFFFF?text=Networking" alt="Gallery Image 4"><div class="overlay"><div class="overlay-content"><h5>Industry Talk</h5><p>Students networking with a guest speaker.</p></div></div></div></div>
-                <div class="col-lg-4 col-md-6"><div class="gallery-item"><img src="https://placehold.co/600x600/9B59B6/FFFFFF?text=Workshop" alt="Gallery Image 5"><div class="overlay"><div class="overlay-content"><h5>Finance Workshop</h5><p>An interactive session on stock analysis.</p></div></div></div></div>
-                <div class="col-lg-4 col-md-6"><div class="gallery-item"><img src="https://placehold.co/600x600/1ABC9C/FFFFFF?text=Discovery" alt="Gallery Image 6"><div class="overlay"><div class="overlay-content"><h5>Science Fair</h5><p>Showcasing innovative student projects.</p></div></div></div></div>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Moments We Cherish</h2>
+          <p class="lead mb-5">
+            A glimpse into the vibrant life at our department.
+          </p>
         </div>
+        <div class="row g-3">
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img
+                src="https://placehold.co/600x600/3498DB/FFFFFF?text=Teamwork"
+                alt="Gallery Image 1"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h5>Collaborative Project</h5>
+                  <p>Students working on a tech prototype.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img src="/Gallery/milad.jpg" alt="Gallery Image 2" />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h5>Event Success</h5>
+                  <p>A successful event.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img
+                src="https://placehold.co/600x600/E74C3C/FFFFFF?text=Performance"
+                alt="Gallery Image 3"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h5>On Stage</h5>
+                  <p>A captivating performance during Arts Night.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img
+                src="https://placehold.co/600x600/2ECC71/FFFFFF?text=Networking"
+                alt="Gallery Image 4"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h5>Industry Talk</h5>
+                  <p>Students networking with a guest speaker.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img
+                src="https://placehold.co/600x600/9B59B6/FFFFFF?text=Workshop"
+                alt="Gallery Image 5"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h5>Finance Workshop</h5>
+                  <p>An interactive session on stock analysis.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img
+                src="https://placehold.co/600x600/1ABC9C/FFFFFF?text=Discovery"
+                alt="Gallery Image 6"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h5>Science Fair</h5>
+                  <p>Showcasing innovative student projects.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="lead mb-5">Have questions? We'd love to hear from you.</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <form class="contact-form">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <input type="text" class="form-control" placeholder="Subject" required>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-5">
-                    <div id="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.3336922530207!2d71.5020063742965!3d30.25607210851505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b34eda51e70c5%3A0xf80b633d6ab1560c!2sDepartment%20of%20Computer%20Engineering!5e0!3m2!1sen!2s!4v1758954984239!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="lead mb-5">Have questions? We'd love to hear from you.</p>
         </div>
+        <div class="row">
+          <div class="col-lg-7 mb-5 mb-lg-0">
+            <form class="contact-form">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+                <div class="col-12 mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Subject"
+                    required
+                  />
+                </div>
+                <div class="col-12 mb-3">
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-5">
+            <div id="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.3336922530207!2d71.5020063742965!3d30.25607210851505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b34eda51e70c5%3A0xf80b633d6ab1560c!2sDepartment%20of%20Computer%20Engineering!5e0!3m2!1sen!2s!4v1758954984239!5m2!1sen!2s"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h5><i class="bi bi-building-gear"></i> Department of Computer Engineering</h5>
-                    <p>Faculty of Engineering & Technology, BZU, Multan</p>
-                    <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#events">Events</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#faculty">Faculty</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
-                    <h5>Societies</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#techModal">Tech</a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#financeModal">Finance</a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#artsModal">Arts</a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#eventsModal">Events</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <h5>Connect With Us</h5>
-                    <p>Follow our journey and stay connected with the latest updates from our vibrant community.</p>
-                     <div class="social-icons">
-                        <a href="#"><i class="bi bi-twitter-x" style="color:white;"></i></a>
-                        <a href="#"><i class="bi bi-facebook" style="color:white;"></i></a>
-                        <a href="#"><i class="bi bi-instagram" style="color:white;"></i></a>
-                        <a href="#"><i class="bi bi-linkedin" style="color:white;"></i></a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h5>
+              <i class="bi bi-building-gear"></i> Department of Computer
+              Engineering
+            </h5>
+            <p>Faculty of Engineering & Technology, BZU, Multan</p>
+            <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#faculty">Faculty</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4 mb-lg-0">
+            <h5>Societies</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#techModal"
+                  >Tech</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#financeModal"
+                  >Finance</a
+                >
+              </li>
+              <li>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#artsModal"
+                  >Arts</a
+                >
+              </li>
+              <li>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#eventsModal"
+                  >Events</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h5>Connect With Us</h5>
+            <p>
+              Follow our journey and stay connected with the latest updates from
+              our vibrant community.
+            </p>
+            <div class="social-icons">
+              <a href="#"
+                ><i class="bi bi-twitter-x" style="color: white"></i
+              ></a>
+              <a href="#"
+                ><i class="bi bi-facebook" style="color: white"></i
+              ></a>
+              <a href="#"
+                ><i class="bi bi-instagram" style="color: white"></i
+              ></a>
+              <a href="#"
+                ><i class="bi bi-linkedin" style="color: white"></i
+              ></a>
             </div>
+          </div>
         </div>
+      </div>
     </footer>
 
-
     <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script>
-    document.getElementById("toggleFaculty").addEventListener("click", function(e) {
-    e.preventDefault();
-    var more = document.getElementById("moreFaculty");
-    if(more.style.display === "none"){
-        more.style.display = "flex";
-        this.textContent = "Show Less";
-    } else {
-        more.style.display = "none";
-        this.textContent = "View All Faculty Members";
-    }
-});
-
-</script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document
+        .getElementById("toggleFaculty")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          var more = document.getElementById("moreFaculty");
+          if (more.style.display === "none") {
+            more.style.display = "flex";
+            this.textContent = "Show Less";
+          } else {
+            more.style.display = "none";
+            this.textContent = "View All Faculty Members";
+          }
+        });
+    </script>
+  </body>
 </html>
-
-
