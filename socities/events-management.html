@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Management Society | Department of Computer Engineering</title>
+    <link rel="icon" type="image/x-icon" href="../logos/events-managers.jpeg">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- AOS for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --bg-dark: #1A1A1A; /* Black Background */
+        --bg-medium: #2A2A2A; /* Lighter Black for cards */
+        --border-color: #3C3C3C;
+        --text-light: #F5F5F5; /* Light Text */
+        --text-muted: #A0A0A0; /* Muted Text */
+        --accent-orange: #FF6200; /* Vibrant Orange */
+        --accent-red: #D32F2F; /* Vibrant Red */
+        --accent-hover: #FF8C00; /* Lighter Orange for hover */
+      }
+
+      /* General styles */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-light);
+        padding-top: 60px;
+        transition: opacity 0.5s ease;
+        position: relative;
+      }
+
+      /* Loading Animation */
+      body.loading {
+        opacity: 0;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "Roboto Mono", monospace;
+        font-weight: 600;
+        color: var(--text-light);
+        letter-spacing: 0.5px;
+      }
+
+      .lead {
+        color: var(--text-light);
+        font-weight: 400;
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        line-height: 1.6;
+      }
+
+      .section-padding {
+        padding: clamp(4rem, 8vw, 6rem) 0;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        font-weight: 700;
+        margin-bottom: 2rem;
+        position: relative;
+        text-transform: uppercase;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background-color: var(--accent-orange);
+        border-radius: 2px;
+      }
+
+      /* Watermark Overlay */
+      .watermark {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 50px,
+          rgba(255, 98, 0, 0.1) 50px,
+          rgba(255, 98, 0, 0.1) 100px
+        );
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.2);
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        font-family: "Roboto Mono", monospace;
+        text-transform: uppercase;
+        opacity: 0.3;
+        user-select: none;
+      }
+
+      /* Image Security */
+      img {
+        pointer-events: none; /* Disable interactions */
+        user-select: none; /* Prevent text selection */
+        -webkit-user-drag: none; /* Prevent dragging in WebKit browsers */
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-color);
+        padding: 0.5rem 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--text-light);
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        margin-right: 1rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .navbar-brand img {
+        height: clamp(30px, 5vw, 35px);
+        transition: transform 0.3s ease;
+      }
+
+      .navbar-brand:hover {
+        color: var(--accent-orange);
+        text-decoration: none;
+        transform: scale(1.05);
+      }
+
+      .navbar-brand:hover img {
+        transform: rotate(10deg);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--text-light);
+        font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+        padding: 0.4rem 0.8rem;
+        position: relative;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--accent-orange);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      .nav-link.active,
+      .nav-link:hover {
+        color: var(--accent-orange) !important;
+        transform: translateY(-2px);
+      }
+
+      .navbar-toggler {
+        border-color: var(--border-color);
+        padding: 0.3rem;
+        transition: transform 0.3s ease;
+      }
+
+      .navbar-toggler:hover {
+        transform: scale(1.1);
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28245, 245, 245, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        width: 20px;
+        height: 20px;
+      }
+
+      .btn-custom {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        padding: 0.6rem 1.8rem;
+        border-radius: 30px;
+        background-color: var(--accent-orange);
+        border: 2px solid var(--accent-orange);
+        color: var(--bg-dark);
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-custom::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.4s ease;
+      }
+
+      .btn-custom:hover::before {
+        left: 100%;
+      }
+
+      .btn-custom:hover {
+        background-color: transparent;
+        color: var(--accent-orange);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 98, 0, 0.4);
+      }
+
+      /* Hero Section */
+      #hero {
+        padding: clamp(6rem, 15vw, 10rem) 0;
+        position: relative;
+        color: var(--text-light);
+        text-align: center;
+        background: linear-gradient(-45deg, var(--bg-dark), #2A2A2A, var(--bg-medium), #4B1C1C);
+        background-size: 400% 400%;
+        animation: gradientAnimation 12s ease infinite;
+        min-height: 70vh;
+        overflow: hidden;
+      }
+
+      #hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+        opacity: 0.15;
+        z-index: -1;
+        transform: translateY(20px);
+        transition: transform 0.5s ease;
+      }
+
+      #hero:hover::before {
+        transform: translateY(0);
+      }
+
+      @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      #hero h1 {
+        font-family: 'Roboto Mono', monospace;
+        font-size: clamp(2.5rem, 6vw, 3.8rem);
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      #hero .lead {
+        font-size: clamp(1.1rem, 3vw, 1.4rem);
+        margin: 2rem auto;
+        max-width: 750px;
+      }
+
+      /* About & Events Section */
+      #about img {
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      #about img:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 10px 20px rgba(255, 98, 0, 0.2);
+      }
+
+      .event-card {
+        background-color: var(--bg-medium);
+        border: 1px solid var(--border-color);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 12px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .event-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: var(--accent-red);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .event-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .event-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgba(255, 98, 0, 0.2);
+      }
+
+      .event-icon {
+        font-size: clamp(2.2rem, 5vw, 2.8rem);
+        color: var(--accent-orange);
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .event-card:hover .event-icon {
+        transform: scale(1.2);
+      }
+
+      /* Team & Events Cards */
+      .custom-card {
+        background-color: var(--bg-medium);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        transition: all 0.4s ease;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .custom-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(255, 98, 0, 0.1), transparent);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .custom-card:hover::after {
+        opacity: 1;
+      }
+
+      .custom-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border-color: var(--accent-orange);
+      }
+
+      .card-img-top {
+        height: clamp(200px, 25vw, 240px);
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .team-card .card-img-top {
+        filter: grayscale(80%);
+        transition: filter 0.4s ease, transform 0.4s ease;
+      }
+
+      .team-card:hover .card-img-top {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+      }
+
+      .card-title {
+        font-family: "Roboto Mono", monospace;
+        font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+        color: var(--text-light);
+      }
+
+      .card-text {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        color: var(--text-light);
+      }
+
+      .card-text.text-muted {
+        font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+        color: var(--text-muted);
+      }
+
+      /* Contact Section */
+      .form-control {
+        background-color: var(--bg-medium);
+        border: 1px solid var(--border-color);
+        color: var(--text-light);
+        padding: 0.8rem;
+        border-radius: 8px;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .form-control:focus {
+        background-color: var(--bg-medium);
+        color: var(--text-light);
+        border-color: var(--accent-orange);
+        box-shadow: 0 0 0 0.2rem rgba(255, 98, 0, 0.25);
+      }
+
+      .form-control::placeholder {
+        color: var(--text-muted);
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--accent-orange);
+        color: var(--bg-dark);
+        border: 2px solid var(--accent-orange);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .back-to-top:hover {
+        background-color: transparent;
+        color: var(--accent-orange);
+        transform: translateY(-5px);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--bg-medium);
+        color: var(--text-light);
+        border-top: 1px solid var(--border-color);
+        padding: clamp(3rem, 5vw, 4rem) 0;
+      }
+
+      footer h5 {
+        font-family: "Roboto Mono", monospace;
+        color: var(--text-light);
+        font-weight: 600;
+        font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+      }
+
+      footer a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      footer a:hover {
+        color: var(--accent-orange);
+        transform: translateX(5px);
+      }
+
+      .social-icons a {
+        font-size: clamp(1.3rem, 3vw, 1.6rem);
+        color: var(--text-light);
+        margin-right: 1.2rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: var(--accent-orange);
+        transform: translateY(-5px);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 991.98px) {
+        #hero {
+          padding: clamp(4rem, 10vw, 6rem) 0;
+          min-height: 50vh;
+        }
+
+        #hero h1 {
+          font-size: clamp(2rem, 5vw, 3rem);
+        }
+
+        .navbar-nav {
+          text-align: center;
+          padding: 0.5rem 0;
+        }
+
+        .nav-link {
+          padding: 0.4rem 0;
+          font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+        }
+
+        .explore-dept-btn {
+          margin: 0.5rem auto;
+          width: fit-content;
+        }
+
+        .event-card,
+        .custom-card {
+          padding: 1.5rem;
+        }
+
+        .watermark {
+          font-size: clamp(1rem, 4vw, 1.5rem);
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .section-padding {
+          padding: clamp(2.5rem, 6vw, 3.5rem) 0;
+        }
+
+        #hero {
+          padding: clamp(3rem, 8vw, 5rem) 0;
+          min-height: 40vh;
+        }
+
+        #hero h1 {
+          font-size: clamp(1.8rem, 4vw, 2.5rem);
+        }
+
+        .section-title {
+          font-size: clamp(1.6rem, 4vw, 2rem);
+        }
+
+        .card-img-top {
+          height: clamp(160px, 20vw, 200px);
+        }
+
+        .btn-custom {
+          padding: 0.6rem 1.5rem;
+          font-size: clamp(0.85rem, 2vw, 0.95rem);
+        }
+
+        .navbar-brand img {
+          height: clamp(25px, 4vw, 30px);
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .btn-custom {
+          width: 100%;
+          padding: 0.5rem;
+          font-size: 0.9rem;
+        }
+
+        .form-control {
+          padding: 0.6rem;
+          font-size: 0.9rem;
+        }
+
+        .social-icons a {
+          margin-right: 0.5rem;
+        }
+
+        .navbar-brand {
+          font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .navbar-brand img {
+          height: clamp(20px, 4vw, 25px);
+        }
+
+        .back-to-top {
+          width: 40px;
+          height: 40px;
+          font-size: 1.2rem;
+        }
+
+        .watermark {
+          font-size: clamp(0.8rem, 3vw, 1.2rem);
+        }
+      }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" class="loading">
+    <!-- Watermark Overlay -->
+    <div class="watermark">Events Management Society | Confidential</div>
+
+    <!-- Navbar -->
+    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../logos/events-managers.jpeg" alt="Logo" draggable="false">
+                Events Managers
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <a href="explore-department.html" class="btn btn-custom btn-sm ms-3 explore-dept-btn" data-aos="fade-left" data-aos-delay="100">Explore Department</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" data-aos="fade-in" data-aos-duration="1000">
+        <div class="container">
+            <h1 data-aos="zoom-in" data-aos-delay="200">We Plan, We Celebrate</h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="400">
+                Crafting unforgettable events for the Department of Computer Engineering.
+            </p>
+            <a href="#events" class="btn btn-custom" data-aos="fade-up" data-aos-delay="600">Discover Our Events</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200" alt="Event Planning" class="img-fluid shadow" draggable="false"/>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
+                    <h2 class="section-title">Who We Are</h2>
+                    <p class="lead">Orchestrating memorable experiences with precision.</p>
+                    <p>
+                        The Events Management Society is a vibrant community dedicated to creating impactful events for the Department of Computer Engineering. From tech conferences to cultural festivals, we handle logistics, promotion, and execution with professionalism to unite our community.
+                    </p>
+                    <a href="#contact" class="btn btn-custom mt-3" data-aos="fade-up" data-aos-delay="600">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section-padding" style="background-color: var(--bg-medium);">
+        <div class="container">
+            <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                <h2 class="section-title">Our Events</h2>
+                <p class="lead mb-5">Experience our meticulously planned events.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="flip-up" data-aos-delay="300">
+                    <div class="event-card h-100">
+                        <div class="event-icon"><i class="bi bi-calendar-event"></i></div>
+                        <h4 class="mb-3">TechFest 2025</h4>
+                        <p>A grand tech conference showcasing innovation, workshops, and networking opportunities.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="flip-up" data-aos-delay="400">
+                    <div class="event-card h-100">
+                        <div class="event-icon"><i class="bi bi-star-fill"></i></div>
+                        <h4 class="mb-3">Cultural Night</h4>
+                        <p>Celebrate diversity with performances, food, and engaging activities.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="flip-up" data-aos-delay="500">
+                    <div class="event-card h-100">
+                        <div class="event-icon"><i class="bi bi-mic-fill"></i></div>
+                        <h4 class="mb-3">Guest Speaker Series</h4>
+                        <p>Hear from industry leaders in our interactive speaker events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section-padding">
+        <div class="container">
+            <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                <h2 class="section-title">Meet Our Leads</h2>
+                <p class="lead mb-5">The visionaries behind our spectacular events.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card custom-card team-card h-100">
+                        <img src="../leads/Shoaib.jpeg" class="card-img-top" alt="Event Lead" draggable="false"/>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Muhammad Shoaib</h5>
+                            <p class="card-subtitle text-white mb-2">Lead</p>
+                            <p class="card-text small">Mastermind of event planning and coordination.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card custom-card team-card h-100">
+                        <img src="../leads/Noor-Ul-AIn.jpeg" class="card-img-top" alt="Logistics Lead" draggable="false"/>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Noor Ul Ain</h5>
+                            <p class="card-subtitle text-white mb-2">Co-Lead</p>
+                            <p class="card-text small">Ensuring seamless execution of every event.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding" style="background-color: var(--bg-medium);">
+        <div class="container">
+            <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="lead mb-5">Want to collaborate on an event? Reach out!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6" data-aos="fade-right" data-aos-delay="400">
+                                <input type="text" class="form-control" placeholder="Your Name" required/>
+                            </div>
+                            <div class="col-md-6" data-aos="fade-left" data-aos-delay="400">
+                                <input type="email" class="form-control" placeholder="Your Email" required/>
+                            </div>
+                            <div class="col-12" data-aos="fade-up" data-aos-delay="500">
+                                <input type="text" class="form-control" placeholder="Subject" required/>
+                            </div>
+                            <div class="col-12" data-aos="fade-up" data-aos-delay="600">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="700">
+                                <button type="submit" class="btn btn-custom">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container text-center text-md-start">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <h5>Events Management Society</h5>
+                    <p>Department of Computer Engineering<br>BZU, Multan</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.tiktok.com/@cessbzu786" target="_blank" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.instagram.com/cess_bzu/" target="_blank" data-aos="fade-up" data-aos-delay="350"><i class="bi bi-instagram"></i></a>
+                        <a href="#" target="_blank" data-aos="fade-up" data-aos-delay="400"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" target="_blank" data-aos="fade-up" data-aos-delay="450"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="index.html">Main Site</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6" data-aos="fade-up" data-aos-delay="350">
+                    <h5>Societies</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="tech-society.html">Tech</a></li>
+                        <li><a href="#">Finance</a></li>
+                        <li><a href="#">Arts</a></li>
+                        <li><a href="events-society.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12 text-center text-lg-start" data-aos="fade-up" data-aos-delay="400">
+                    <h5>Join Our Community</h5>
+                    <p>Stay updated with our latest events and initiatives.</p>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: var(--border-color);">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                <p class="mb-0 small">&copy; 2025 Events Management Society. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to Top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+
+        // Remove loading class after page load
+        window.addEventListener('load', () => {
+            document.body.classList.remove('loading');
+        });
+
+        // Activate scrollspy
+        const mainNav = document.body.querySelector('#mainNav');
+        if (mainNav) {
+            new bootstrap.ScrollSpy(document.body, {
+                target: '#mainNav',
+                offset: 80,
+            });
+        }
+
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Disable right-click on images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                alert('Downloading images is not allowed.');
+            });
+        });
+
+        // Warn against screenshots
+        document.addEventListener('keydown', (e) => {
+            // Detect PrintScreen, Ctrl+Shift+I (DevTools), or similar
+            if (e.key === 'PrintScreen' || 
+                (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+                (e.ctrlKey && e.key === 'p')) {
+                e.preventDefault();
+                alert('Screenshots are not permitted on this site.');
+            }
+        });
+    </script>
+</body>
+</html>
