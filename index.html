@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Department of Computer Engineering</title>
-    <link rel="icon" type="image/x-icon" href="Gallery/Logo.png">
+    <link rel="icon" type="image/x-icon" href="Gallery/Logo.png" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -106,40 +106,56 @@
         color: var(--bs-primary) !important;
       }
 
-      /* Hero Section */
+      /* Hero Section*/
       #hero {
         position: relative;
         height: 100vh;
-        color: white;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
-        background: linear-gradient(
-          135deg,
-          #020024 0%,
-          #090979 35%,
-          #00d4ff 100%
-        );
+        color: white;
+      }
+      #heroVideo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        z-index: -1;
       }
 
-      #hero .container {
+      /* Dark overlay for better text readability */
+      #hero .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.43);
+        z-index: 0;
+      }
+
+      /* Hero Text */
+      .hero-content {
         position: relative;
-        z-index: 2;
+        z-index: 1;
       }
 
       #hero h1 {
         font-family: "Orbitron", sans-serif;
         font-size: 3rem;
         font-weight: 900;
-        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       }
 
       #hero p {
         font-size: 1.25rem;
         max-width: 600px;
         margin: 20px auto 30px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       }
 
       .btn-hero {
@@ -155,55 +171,20 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
 
-      /* Animated shapes for hero */
-      .animated-shape {
-        position: absolute;
-        z-index: 1;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        animation: float 20s infinite linear;
+      /* Mobile adjustments */
+      @media (max-width: 991.98px) {
+        #hero h1 {
+          font-size: 2.4rem;
+        }
+        #hero p {
+          font-size: 1.1rem;
+        }
       }
-      .shape1 {
-        width: 150px;
-        height: 150px;
-        top: 10%;
-        left: 15%;
-        animation-duration: 25s;
-      }
-      .shape2 {
-        width: 80px;
-        height: 80px;
-        top: 70%;
-        left: 10%;
-        animation-duration: 18s;
-        animation-delay: 2s;
-      }
-      .shape3 {
-        width: 50px;
-        height: 50px;
-        top: 25%;
-        right: 15%;
-        animation-duration: 22s;
-        animation-delay: 4s;
-        border-radius: 30%;
-      }
-      .shape4 {
-        width: 120px;
-        height: 120px;
-        top: 60%;
-        right: 20%;
-        animation-duration: 20s;
-        animation-delay: 1s;
-      }
-      .shape5 {
-        width: 60px;
-        height: 60px;
-        top: 40%;
-        left: 50%;
-        transform: translateX(-50%);
-        animation-duration: 15s;
-        animation-delay: 3s;
-        border-radius: 10%;
+
+      @media (max-width: 767.98px) {
+        #hero h1 {
+          font-size: 2rem;
+        }
       }
 
       @keyframes float {
@@ -608,7 +589,12 @@
     >
       <div class="container">
         <a class="navbar-brand" href="#"
-          ><img src="Gallery/Logo.png" style="height: 50px; padding: 0; margin: 0;" alt=""> Computer Engineering</a
+          ><img
+            src="Gallery/Logo.png"
+            style="height: 50px; padding: 0; margin: 0"
+            alt=""
+          />
+          Computer Engineering</a
         >
         <button
           class="navbar-toggler"
@@ -629,8 +615,7 @@
             </li>
 
             <li class="nav-item">
-              <a
-                class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="#about">About</a>
               <!-- <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
                 <li>
                   <a class="dropdown-item" href="#about">Vision and Mission</a>
@@ -640,9 +625,7 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a
-                class="nav-link"
-                href="#faculty">Faculty</a>
+              <a class="nav-link" href="#faculty">Faculty</a>
               <!-- <ul class="dropdown-menu" aria-labelledby="facultyDropdown">
                 <li>
                   <a class="dropdown-item" href="#hod">Head of Department</a>
@@ -689,7 +672,13 @@
                   >
                 </li>
                 <li>
+<<<<<<< Updated upstream
                   <a class="dropdown-item" href="/societies/events-management.html"
+=======
+                  <a
+                    class="dropdown-item"
+                    href="/socities/events-management.html"
+>>>>>>> Stashed changes
                     >Events Management</a
                   >
                 </li>
@@ -715,14 +704,10 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="highlightsDropdown">
                 <li>
-                  <a class="dropdown-item" href="#events"
-                    >News & Events</a
-                  >
+                  <a class="dropdown-item" href="#events">News & Events</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#gallery"
-                    >Gallery</a
-                  >
+                  <a class="dropdown-item" href="#gallery">Gallery</a>
                 </li>
               </ul>
             </li>
@@ -736,22 +721,19 @@
 
     <!-- Hero Section -->
     <header id="hero" class="text-center">
-      <!-- Animated Shapes -->
-      <div class="animated-shape shape1"></div>
-      <div class="animated-shape shape2"></div>
-      <div class="animated-shape shape3"></div>
-      <div class="animated-shape shape4"></div>
-      <div class="animated-shape shape5"></div>
+      <img src="./logos/background-hero.gif" id="heroVideo" alt="Background" />
 
-      <div class="container">
+      <div class="overlay"></div>
+
+      <div class="container hero-content">
         <h1 class="display-3">Welcome to the Future of Innovation</h1>
         <p class="lead">
           Explore your passion, join our communities, and shape the world of
           tomorrow with us.
         </p>
-        <a href="#societies" class="btn btn-primary btn-lg btn-hero"
-          >Discover Our Societies</a
-        >
+        <a href="#societies" class="btn btn-primary btn-lg btn-hero">
+          Discover Our Societies
+        </a>
       </div>
     </header>
 
@@ -772,7 +754,7 @@
               We are a collective of thinkers, creators, and leaders dedicated
               to pushing the boundaries of knowledge and technology.
             </p>
-            
+
             <p>
               Our department fosters a unique environment where students are
               encouraged to collaborate across disciplines. From coding the next
@@ -1210,6 +1192,8 @@
               </div>
             </div>
           </div>
+
+          <!--Sir baqer-->
           <div class="col-lg-4 col-md-6">
             <div class="card faculty-card h-100 border-0 shadow-sm">
               <div class="card-img-top position-relative overflow-hidden">
@@ -1244,6 +1228,8 @@
               </div>
             </div>
           </div>
+
+          <!--Sir zahid-->
           <div class="col-lg-4 col-md-6">
             <div class="card faculty-card h-100 border-0 shadow-sm">
               <div class="card-img-top position-relative overflow-hidden">
@@ -1327,6 +1313,7 @@
         <div class="row g-4">
           <!-- Tech Society Card -->
           <div class="col-lg-3 col-md-6">
+<<<<<<< Updated upstream
             <div
               id="tech-card"
               class="card h-100 society-card text-center p-4"
@@ -1343,6 +1330,23 @@
               <a href="societies/tech-society.html" class="btn btn-outline-primary mt-3">
                 Explore Us Now
               </a>
+=======
+            <div id="tech-card" class="card h-80 society-card text-center p-4">
+              <div class="card-body">
+                <span class="icon"><i class="bi bi-cpu-fill"></i></span>
+                <h5 class="card-title">Tech Society</h5>
+                <p>
+                  Code, innovate, and build the future. Join us for hackathons,
+                  workshops, and guest lectures.
+                </p>
+                <a
+                  href="socities/tech-society.html"
+                  class="btn btn-outline-primary mt-3"
+                >
+                  Explore Us Now
+                </a>
+              </div>
+>>>>>>> Stashed changes
             </div>
           </div>
           <!-- Finance Society Card -->
@@ -1404,7 +1408,14 @@
                   Make it happen. Plan, organize, and execute unforgettable
                   events for the entire campus.
                 </p>
+<<<<<<< Updated upstream
               <a href="/societies/events-management.html" class="btn btn-outline-warning mt-3"
+=======
+              </div>
+              <a
+                href="socities/events-management.html"
+                class="btn btn-outline-warning mt-3"
+>>>>>>> Stashed changes
                 >Explore Us Now</a
               >
               </div>
@@ -1497,7 +1508,7 @@
       </div>
     </div>
     <!-- Events Modal -->
-    <div class="modal fade" id="eventsModal" tabindex="-1">
+    <!-- <div class="modal fade" id="eventsModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered modal-events">
         <div class="modal-content">
           <div class="modal-header">
@@ -1524,7 +1535,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>  -->
 
     <!-- Portal Section -->
     <section id="portal" class="section-padding">
@@ -1579,6 +1590,7 @@
             Stay updated with what's happening in our department.
           </p>
         </div>
+
         <div class="row g-4">
           <div class="col-md-4">
             <div class="card event-card h-100">
@@ -1602,46 +1614,109 @@
               </div>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="card event-card h-100">
               <img
-                src="Events/Pie&AI.jpeg"
+                src="Events/teacher-day.jpg"
                 class="card-img-top"
                 alt="Event 2"
               />
               <div class="card-body">
-                <h5 class="card-title">Prompt to Prototype: Build your first Chatbot</h5>
-                <p class="card-text text-muted">Oct 13,2025 | Tech Society</p>
+                <h5 class="card-title">Celebrating Teachers Day</h5>
+                <p class="card-text text-muted">Oct 6,2025 | Event Managers</p>
                 <p class="card-text">
-                  Join the DeepLearning.AI community meetup in Multan, hosted at the Department of Computer Engineering, B.Z.U. This free session, led by Dr. Muhammad Umar Chaudhry (Assistant Professor, B.Z.U. & PIE & AI Ambassador), will guide participants from prompt engineering to building a working chatbot prototype.
+                  Join us this Teachers’ Day as we come together to honor the
+                  dedication, guidance, and countless efforts of our educators.
+                  Let’s celebrate the mentors who inspire, shape futures, and
+                  give so much of themselves with pride and passion.
+                </p>
+                <!-- <a href="#" class="btn btn-sm btn-primary">Register Now</a> -->
+              </div>
+            </div>
+          </div>
 
-                  📍 Venue: Computer Engineering Dept., B.Z.U. Multan
-                  📅 Date: October 13, 2025
-                  ⏰ Time: 11:30 AM – 1:30 PM (PKT)
-
-                  This hands-on event is designed for students, developers, and AI enthusiasts eager to dive into practical AI applications.
+          <div class="col-md-4">
+            <div class="card event-card h-100">
+              <img src="Events/PieAI.jpg" class="card-img-top" alt="Event 2" />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Prompt to Prototype: Build your first Chatbot
+                </h5>
+                <p class="card-text text-muted">
+                  Oct 13,2025 | 11:30am-1:30pm | Core Tech Guild
+                </p>
+                <p class="card-text">
+                  Join the DeepLearning.AI community meetup in Multan, hosted at
+                  the Department of Computer Engineering, B.Z.U by Dr. Muhammad
+                  Umar Chaudhry (Assistant Professor, B.Z.U. & PIE & AI
+                  Ambassador), he will guide participants from prompt
+                  engineering to building a working chatbot prototype.
                 </p>
                 <a href="#" class="btn btn-sm btn-primary">Register Now</a>
               </div>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="card event-card h-100">
               <img
-                src="https://placehold.co/600x400/D35400/FFFFFF?text=Cultural+Night"
+                src="Events/qawali-night.jpg"
                 class="card-img-top"
                 alt="Event 3"
               />
               <div class="card-body">
-                <h5 class="card-title">Annual Bonfire Night</h5>
+                <h5 class="card-title">Bonfire & Qawali Night</h5>
                 <p class="card-text text-muted">
-                  Coming Soon | Arts & Culture | Events Crew
+                  Coming Soon | Event Managers | Arts and Culture
                 </p>
                 <p class="card-text">
-                  A spectacular evening celebrating the diverse talents of our
-                  students through music, dance, and drama.
+                  A spectacular evening celebrating togetherness and soulful
+                  performances. Join us for a memorable night of warmth, qawali,
+                  and shared moments under the stars.
                 </p>
                 <!-- <a href="#" class="btn btn-sm btn-primary">Read More</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card event-card h-100">
+              <img src="Events/funday.jpg" class="card-img-top" alt="Event 2" />
+              <div class="card-body">
+                <h5 class="card-title">Memorable Funday</h5>
+                <p class="card-text text-muted">
+                  Feb 25,2025 | Event Managers | Arts and Culture
+                </p>
+                <p class="card-text">
+                  Get ready for a day full of excitement with fun games,
+                  delicious food, and amazing gift hampers. We’re thrilled to
+                  have you here, let’s make it a day to remember!
+                </p>
+                <!-- <a href="#" class="btn btn-sm btn-primary">Register Now</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card event-card h-100">
+              <img
+                src="Events/sports-day.jpg"
+                class="card-img-top"
+                alt="Event 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Sports Fiesta</h5>
+                <p class="card-text text-muted">
+                  24-28 Feb, 2025 | Tech Society
+                </p>
+                <p class="card-text">
+                  Gear up for an exciting week filled with thrilling games, team
+                  spirit, fundays, funfairs, and non-stop entertainment. Let the
+                  energy, passion, and fun begin—it's time to play, cheer, and
+                  celebrate together!
+                </p>
+                <!-- <a href="#" class="btn btn-sm btn-primary">Register Now</a> -->
               </div>
             </div>
           </div>
@@ -1659,84 +1734,203 @@
           </p>
         </div>
         <div class="row g-3">
+          <!-- Gallery Item 1 -->
           <div class="col-lg-4 col-md-6">
-            <div class="gallery-item">
-              <img
-                src="https://placehold.co/600x600/3498DB/FFFFFF?text=Teamwork"
-                alt="Gallery Image 1"
-              />
-              <div class="overlay">
-                <div class="overlay-content">
-                  <h5>Collaborative Project</h5>
-                  <p>Students working on a tech prototype.</p>
+            <div
+              id="galleryCarousel1"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="4500"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./Gallery/teamwork1.jpg"
+                    class="d-block w-100"
+                    alt="Collaborative Project"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./Gallery/teamwork1.jpg"
+                    class="d-block w-100"
+                    alt="Collaborative Project"
+                  />
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item">
-              <img src="/Gallery/milad.jpg" alt="Gallery Image 2" />
-              <div class="overlay">
-                <div class="overlay-content">
-                  <h5>Event Success</h5>
-                  <p>A successful event.</p>
-                </div>
+            <div class="overlay">
+              <div class="overlay-content">
+                <h5>Collaborative Project</h5>
+                <p>Students working on a tech prototype.</p>
               </div>
             </div>
           </div>
+
+          <!-- Gallery Item 2 -->
           <div class="col-lg-4 col-md-6">
-            <div class="gallery-item">
-              <img
-                src="https://placehold.co/600x600/E74C3C/FFFFFF?text=Performance"
-                alt="Gallery Image 3"
-              />
-              <div class="overlay">
-                <div class="overlay-content">
-                  <h5>On Stage</h5>
-                  <p>A captivating performance during Arts Night.</p>
+            <div
+              id="galleryCarousel2"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="4500"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./Gallery/milad1.jpg"
+                    class="d-block w-100"
+                    alt="Event Success"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./Gallery/milad2.jpg"
+                    class="d-block w-100"
+                    alt="Event Success"
+                  />
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item">
-              <img
-                src="https://placehold.co/600x600/2ECC71/FFFFFF?text=Networking"
-                alt="Gallery Image 4"
-              />
-              <div class="overlay">
-                <div class="overlay-content">
-                  <h5>Industry Talk</h5>
-                  <p>Students networking with a guest speaker.</p>
-                </div>
+            <div class="overlay">
+              <div class="overlay-content">
+                <h5>Event Success</h5>
+                <p>A successful event.</p>
               </div>
             </div>
           </div>
+
+          <!-- Gallery Item 4 -->
           <div class="col-lg-4 col-md-6">
-            <div class="gallery-item">
-              <img
-                src="https://placehold.co/600x600/9B59B6/FFFFFF?text=Workshop"
-                alt="Gallery Image 5"
-              />
-              <div class="overlay">
-                <div class="overlay-content">
-                  <h5>Finance Workshop</h5>
-                  <p>An interactive session on stock analysis.</p>
+            <div
+              id="galleryCarousel4"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="4500"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./Gallery/networking1.jpg"
+                    class="d-block w-100"
+                    alt="Annual Dinner"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./Gallery/networking2.jpg"
+                    class="d-block w-100"
+                    alt="Annual Dinner"
+                  />
                 </div>
               </div>
             </div>
+            <div class="overlay">
+              <div class="overlay-content">
+                <h5>Annual Dinner</h5>
+                <p>
+                  Staff and Students are cordially invited to attend the annual
+                  dinner.
+                </p>
+              </div>
+            </div>
           </div>
+
+          <!-- Gallery Item 5 -->
           <div class="col-lg-4 col-md-6">
-            <div class="gallery-item">
-              <img
-                src="https://placehold.co/600x600/1ABC9C/FFFFFF?text=Discovery"
-                alt="Gallery Image 6"
-              />
-              <div class="overlay">
-                <div class="overlay-content">
-                  <h5>Science Fair</h5>
-                  <p>Showcasing innovative student projects.</p>
+            <div
+              id="galleryCarousel5"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="4500"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./Gallery/sports1.jpg"
+                    class="d-block w-100"
+                    alt="Sports Fiesta"
+                  />
                 </div>
+                <div class="carousel-item">
+                  <img
+                    src="./Gallery/sports2.jpg"
+                    class="d-block w-100"
+                    alt="Sports Fiesta"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="overlay">
+              <div class="overlay-content">
+                <h5>Sports Fiesta</h5>
+                <p>A glimpse on students efforts for sports week.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 6 -->
+          <div class="col-lg-4 col-md-6">
+            <div
+              id="galleryCarousel6"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="4500"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./Gallery/envionrment day1.jpg"
+                    class="d-block w-100"
+                    alt="Environment Day"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./Gallery/envionrment day2.jpg"
+                    class="d-block w-100"
+                    alt="Environment Day"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="overlay">
+              <div class="overlay-content">
+                <h5>Environment Day</h5>
+                <p>Small steps today, a greener tomorrow.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div
+              id="galleryCarousel3"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="4500"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./Gallery/qawali-night1.jpg"
+                    class="d-block w-100"
+                    alt="On Stage"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./Gallery/qawali-night2.jpg"
+                    class="d-block w-100"
+                    alt="On Stage"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="overlay">
+              <div class="overlay-content">
+                <h5>On Stage</h5>
+                <p>A captivating performance during Arts Night.</p>
               </div>
             </div>
           </div>
@@ -1817,10 +2011,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mb-4 mb-lg-0">
-            <h5>
-              Department of Computer
-              Engineering
-            </h5>
+            <h5>Department of Computer Engineering</h5>
             <p>Faculty of Engineering & Technology, BZU, Multan</p>
             <p class="mb-0">&copy; 2025 All Rights Reserved.</p>
           </div>
@@ -1837,27 +2028,16 @@
             <h5>Societies</h5>
             <ul class="list-unstyled">
               <li>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#techModal"
-                  >Tech</a
-                >
+                <a href="./socities/tech-society.html">Tech</a>
               </li>
               <li>
-                <a
-                  href="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#financeModal"
-                  >Finance</a
-                >
+                <a href="#">Finance</a>
               </li>
               <li>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#artsModal"
-                  >Arts</a
-                >
+                <a href="#">Arts</a>
               </li>
               <li>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#eventsModal"
-                  >Events</a
-                >
+                <a href="./socities/events-management.html">Events</a>
               </li>
             </ul>
           </div>
@@ -1871,7 +2051,8 @@
               <!-- <a href="#"
                 ><i class="bi bi-twitter-x" style="color: white"></i
               ></a> -->
-              <a href="https://www.tiktok.com/@cessbzu786?_t=ZS-90GLbIuGKY9&_r=1"
+              <a
+                href="https://www.tiktok.com/@cessbzu786?_t=ZS-90GLbIuGKY9&_r=1"
                 ><i class="bi bi-tiktok" style="color: white"></i
               ></a>
               <a href="https://www.instagram.com/cess_bzu/#"
@@ -1882,6 +2063,12 @@
               ></a> -->
             </div>
           </div>
+        </div>
+        <hr class="my-4" style="border-color: var(--border-color)" />
+        <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+          <p class="mb-0 small">
+            Made with <span id="heart-regular">❤️</span> by Tech Society
+          </p>
         </div>
       </div>
     </footer>

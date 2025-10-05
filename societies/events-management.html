@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Events Management Society | Department of Computer Engineering</title>
-    <link rel="icon" type="image/x-icon" href="../logos/events-managers.jpeg">
+    <title>
+      Events Management Society | Department of Computer Engineering
+    </title>
+    <link rel="icon" type="image/x-icon" href="../logos/events-managers.jpeg" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- AOS for animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
     <style>
       :root {
-        --bg-dark: #1A1A1A; /* Black Background */
-        --bg-medium: #2A2A2A; /* Lighter Black for cards */
-        --border-color: #3C3C3C;
-        --text-light: #F5F5F5; /* Light Text */
-        --text-muted: #A0A0A0; /* Muted Text */
-        --accent-orange: #FF6200; /* Vibrant Orange */
-        --accent-red: #D32F2F; /* Vibrant Red */
-        --accent-hover: #FF8C00; /* Lighter Orange for hover */
+        --bg-dark: #1a1a1a; /* Black Background */
+        --bg-medium: #2a2a2a; /* Lighter Black for cards */
+        --border-color: #3c3c3c;
+        --text-light: #f5f5f5; /* Light Text */
+        --text-muted: #a0a0a0; /* Muted Text */
+        --accent-orange: #ff6200; /* Vibrant Orange */
+        --accent-red: #d32f2f; /* Vibrant Red */
+        --accent-hover: #ff8c00; /* Lighter Orange for hover */
       }
 
       /* General styles */
@@ -52,7 +64,12 @@
         opacity: 0;
       }
 
-      h1, h2, h3, h4, h5, h6 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         font-family: "Roboto Mono", monospace;
         font-weight: 600;
         color: var(--text-light);
@@ -79,7 +96,7 @@
       }
 
       .section-title::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -10px;
         left: 50%;
@@ -174,7 +191,7 @@
       }
 
       .nav-link::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 0;
         height: 2px;
@@ -227,13 +244,18 @@
       }
 
       .btn-custom::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
         transition: left 0.4s ease;
       }
 
@@ -254,7 +276,13 @@
         position: relative;
         color: var(--text-light);
         text-align: center;
-        background: linear-gradient(-45deg, var(--bg-dark), #2A2A2A, var(--bg-medium), #4B1C1C);
+        background: linear-gradient(
+          -45deg,
+          var(--bg-dark),
+          #2a2a2a,
+          var(--bg-medium),
+          #4b1c1c
+        );
         background-size: 400% 400%;
         animation: gradientAnimation 12s ease infinite;
         min-height: 70vh;
@@ -262,13 +290,13 @@
       }
 
       #hero::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('/logos/hero\ image.jpeg') no-repeat center center/cover;
+        background: url("/logos/hero\ image.jpeg") no-repeat center center/cover;
         opacity: 0.15;
         z-index: -1;
         transform: translateY(20px);
@@ -280,13 +308,19 @@
       }
 
       @keyframes gradientAnimation {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       #hero h1 {
-        font-family: 'Roboto Mono', monospace;
+        font-family: "Roboto Mono", monospace;
         font-size: clamp(2.5rem, 6vw, 3.8rem);
         font-weight: 700;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -324,7 +358,7 @@
       }
 
       .event-card::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -600,162 +634,299 @@
         }
       }
     </style>
-</head>
-<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" class="loading">
-
+  </head>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#mainNav"
+    data-bs-offset="80"
+    class="loading"
+  >
     <!-- Navbar -->
     <nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="../logos/events-managers.jpeg" alt="Logo" draggable="false">
-                Events Managers
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-                <a href="explore-department.html" class="btn btn-custom btn-sm ms-3 explore-dept-btn" data-aos="fade-left" data-aos-delay="100">Explore Department</a>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="../logos/events-managers.jpeg"
+            alt="Logo"
+            draggable="false"
+          />
+          Events Managers
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto text-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#hero">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#events">Events</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a
+            href="/index.html"
+            class="btn btn-custom btn-sm ms-3 explore-dept-btn"
+            data-aos="fade-left"
+            data-aos-delay="100"
+            >Explore Department</a
+          >
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <header id="hero" data-aos="fade-in" data-aos-duration="1000">
-        <div class="container">
-            <h1 data-aos="zoom-in" data-aos-delay="200">We Plan, We Celebrate</h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="400">
-                Crafting unforgettable events for the Department of Computer Engineering.
-            </p>
-            <a href="#events" class="btn btn-custom" data-aos="fade-up" data-aos-delay="600">Discover Our Events</a>
-        </div>
+      <div class="container">
+        <h1 data-aos="zoom-in" data-aos-delay="200">We Plan, We Celebrate</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="400">
+          Crafting unforgettable events for the Department of Computer
+          Engineering.
+        </p>
+        <a
+          href="#events"
+          class="btn btn-custom"
+          data-aos="fade-up"
+          data-aos-delay="600"
+          >Discover Our Events</a
+        >
+      </div>
     </header>
 
     <!-- About Section -->
     <section id="about" class="section-padding">
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200" alt="Event Planning" class="img-fluid shadow" draggable="false"/>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
-                    <h2 class="section-title">Who We Are</h2>
-                    <p class="lead">Orchestrating memorable experiences with precision.</p>
-                    <p>
-                        The Events Management Society is a vibrant community dedicated to creating impactful events for the Department of Computer Engineering. From tech conferences to cultural festivals, we handle logistics, promotion, and execution with professionalism to unite our community.
-                    </p>
-                    <a href="#contact" class="btn btn-custom mt-3" data-aos="fade-up" data-aos-delay="600">Join Us</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+              alt="Event Planning"
+              class="img-fluid shadow"
+              draggable="false"
+            />
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
+            <h2 class="section-title">Who We Are</h2>
+            <p class="lead">
+              Orchestrating memorable experiences with precision.
+            </p>
+            <p>
+              The Events Management Society is a vibrant community dedicated to
+              creating impactful events for the Department of Computer
+              Engineering. From tech conferences to cultural festivals, we
+              handle logistics, promotion, and execution with professionalism to
+              unite our community.
+            </p>
+            <a
+              href="#contact"
+              class="btn btn-custom mt-3"
+              data-aos="fade-up"
+              data-aos-delay="600"
+              >Join Us</a
+            >
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Events Section -->
-    <section id="events" class="section-padding" style="background-color: var(--bg-medium);">
-        <div class="container">
-            <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
-                <h2 class="section-title">Our Events</h2>
-                <p class="lead mb-5">Experience our meticulously planned events.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="flip-up" data-aos-delay="300">
-                    <div class="event-card h-100">
-                        <div class="event-icon"><i class="bi bi-calendar-event"></i></div>
-                        <h4 class="mb-3">TechFest 2025</h4>
-                        <p>A grand tech conference showcasing innovation, workshops, and networking opportunities.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="flip-up" data-aos-delay="400">
-                    <div class="event-card h-100">
-                        <div class="event-icon"><i class="bi bi-star-fill"></i></div>
-                        <h4 class="mb-3">Cultural Night</h4>
-                        <p>Celebrate diversity with performances, food, and engaging activities.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="flip-up" data-aos-delay="500">
-                    <div class="event-card h-100">
-                        <div class="event-icon"><i class="bi bi-mic-fill"></i></div>
-                        <h4 class="mb-3">Guest Speaker Series</h4>
-                        <p>Hear from industry leaders in our interactive speaker events.</p>
-                    </div>
-                </div>
-            </div>
+    <section
+      id="events"
+      class="section-padding"
+      style="background-color: var(--bg-medium)"
+    >
+      <div class="container">
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+          <h2 class="section-title">Our Events</h2>
+          <p class="lead mb-5">Experience our meticulously planned events.</p>
         </div>
+        <div class="row g-4">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="flip-up"
+            data-aos-delay="300"
+          >
+            <div class="event-card h-100">
+              <div class="event-icon"><i class="bi bi-calendar-event"></i></div>
+              <h4 class="mb-3">TechFest 2025</h4>
+              <p>
+                A grand tech conference showcasing innovation, workshops, and
+                networking opportunities.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="flip-up"
+            data-aos-delay="400"
+          >
+            <div class="event-card h-100">
+              <div class="event-icon"><i class="bi bi-star-fill"></i></div>
+              <h4 class="mb-3">Cultural Night</h4>
+              <p>
+                Celebrate diversity with performances, food, and engaging
+                activities.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="flip-up"
+            data-aos-delay="500"
+          >
+            <div class="event-card h-100">
+              <div class="event-icon"><i class="bi bi-mic-fill"></i></div>
+              <h4 class="mb-3">Guest Speaker Series</h4>
+              <p>
+                Hear from industry leaders in our interactive speaker events.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Team Section -->
     <section id="team" class="section-padding">
-        <div class="container">
-            <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
-                <h2 class="section-title">Meet Our Leads</h2>
-                <p class="lead mb-5">The visionaries behind our spectacular events.</p>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card custom-card team-card h-100">
-                        <img src="../leads/Shoaib.jpeg" class="card-img-top" alt="Event Lead" draggable="false"/>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Muhammad Shoaib</h5>
-                            <p class="card-subtitle text-white mb-2">Lead</p>
-                            <p class="card-text small">Mastermind of event planning and coordination.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card custom-card team-card h-100">
-                        <img src="../leads/noor.jpeg" class="card-img-top" alt="Logistics Lead" draggable="false"/>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Noor Ul Ain Fatima</h5>
-                            <p class="card-subtitle text-white mb-2">Co-Lead</p>
-                            <p class="card-text small">Ensuring seamless execution of every event.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+          <h2 class="section-title">Meet Our Leads</h2>
+          <p class="lead mb-5">
+            The visionaries behind our spectacular events.
+          </p>
         </div>
+        <div class="row g-4 justify-content-center">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="card custom-card team-card h-100">
+              <img
+                src="../leads/Shoaib.jpeg"
+                class="card-img-top"
+                alt="Event Lead"
+                draggable="false"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Muhammad Shoaib</h5>
+                <p class="card-subtitle text-white mb-2">Lead</p>
+                <p class="card-text small">
+                  Mastermind of event planning and coordination.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="card custom-card team-card h-100">
+              <img
+                src="../leads/noor.jpeg"
+                class="card-img-top"
+                alt="Logistics Lead"
+                draggable="false"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Noor Ul Ain Fatima</h5>
+                <p class="card-subtitle text-white mb-2">Co-Lead</p>
+                <p class="card-text small">
+                  Ensuring seamless execution of every event.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding" style="background-color: var(--bg-medium);">
-        <div class="container">
-            <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="lead mb-5">Want to collaborate on an event? Reach out!</p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6" data-aos="fade-right" data-aos-delay="400">
-                                <input type="text" class="form-control" placeholder="Your Name" required/>
-                            </div>
-                            <div class="col-md-6" data-aos="fade-left" data-aos-delay="400">
-                                <input type="email" class="form-control" placeholder="Your Email" required/>
-                            </div>
-                            <div class="col-12" data-aos="fade-up" data-aos-delay="500">
-                                <input type="text" class="form-control" placeholder="Subject" required/>
-                            </div>
-                            <div class="col-12" data-aos="fade-up" data-aos-delay="600">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="700">
-                                <button type="submit" class="btn btn-custom">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section
+      id="contact"
+      class="section-padding"
+      style="background-color: var(--bg-medium)"
+    >
+      <div class="container">
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="lead mb-5">Want to collaborate on an event? Reach out!</p>
         </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
+            <form>
+              <div class="row g-3">
+                <div
+                  class="col-md-6"
+                  data-aos="fade-right"
+                  data-aos-delay="400"
+                >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="400">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+                <div class="col-12" data-aos="fade-up" data-aos-delay="500">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Subject"
+                    required
+                  />
+                </div>
+                <div class="col-12" data-aos="fade-up" data-aos-delay="600">
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                </div>
+                <div
+                  class="col-12 text-center"
+                  data-aos="fade-up"
+                  data-aos-delay="700"
+                >
+                  <button type="submit" class="btn btn-custom">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-5">
+<<<<<<< Updated upstream:societies/events-management.html
         <div class="container text-center text-md-start">
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
@@ -794,115 +965,207 @@
             <hr class="my-4" style="border-color: var(--border-color);">
             <div class="text-center" data-aos="fade-up" data-aos-delay="500">
                 <p class="mb-0 small">Made with ❤️ by Tech Team. &copy; 2025 Events Management Society. All Rights Reserved.</p>
+=======
+      <div class="container text-center text-md-start">
+        <div class="row gy-4">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h5>Events Management Society</h5>
+            <p>Department of Computer Engineering<br />BZU, Multan</p>
+            <div class="social-icons mt-3">
+              <a
+                href="https://www.tiktok.com/@cessbzu786"
+                target="_blank"
+                data-aos="fade-up"
+                data-aos-delay="300"
+                ><i class="bi bi-tiktok"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/cess_bzu/"
+                target="_blank"
+                data-aos="fade-up"
+                data-aos-delay="350"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href="#"
+                target="_blank"
+                data-aos="fade-up"
+                data-aos-delay="400"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a
+                href="#"
+                target="_blank"
+                data-aos="fade-up"
+                data-aos-delay="450"
+                ><i class="bi bi-github"></i
+              ></a>
+>>>>>>> Stashed changes:socities/events-management.html
             </div>
+          </div>
+          <div
+            class="col-lg-2 col-md-3 col-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="/index.html">Main Site</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-2 col-md-3 col-6"
+            data-aos="fade-up"
+            data-aos-delay="350"
+          >
+            <h5>Societies</h5>
+            <ul class="list-unstyled">
+              <li><a href="tech-society.html">Tech</a></li>
+              <li><a href="#">Finance</a></li>
+              <li><a href="#">Arts</a></li>
+              <li><a href="#">Events</a></li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-4 col-md-12 text-center text-lg-start"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <h5>Join Our Community</h5>
+            <p>Stay updated with our latest events and initiatives.</p>
+          </div>
         </div>
+        <hr class="my-4" style="border-color: var(--border-color)" />
+        <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+          <p class="mb-0 small">
+            &copy; 2025 Events Management Society. All Rights Reserved.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to Top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="back-to-top" aria-label="Back to Top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
 
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-            easing: 'ease-in-out'
-        });
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        easing: "ease-in-out",
+      });
 
-        // Remove loading class after page load
-        window.addEventListener('load', () => {
-            document.body.classList.remove('loading');
-        });
+      // Remove loading class after page load
+      window.addEventListener("load", () => {
+        document.body.classList.remove("loading");
+      });
 
-        // Activate scrollspy
-        const mainNav = document.body.querySelector('#mainNav');
-        if (mainNav) {
-            new bootstrap.ScrollSpy(document.body, {
-                target: '#mainNav',
-                offset: 80,
-            });
+      // Activate scrollspy
+      const mainNav = document.body.querySelector("#mainNav");
+      if (mainNav) {
+        new bootstrap.ScrollSpy(document.body, {
+          target: "#mainNav",
+          offset: 80,
+        });
+      }
+
+      // Back to Top Button
+      const backToTop = document.querySelector(".back-to-top");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
         }
+      });
 
-        // Back to Top Button
-        const backToTop = document.querySelector('.back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
+      // Enhanced Image Security
+      document.querySelectorAll("img").forEach((img) => {
+        // Disable right-click
+        img.addEventListener("contextmenu", (e) => {
+          e.preventDefault();
+          alert("Downloading images is not allowed.");
         });
 
-        // Enhanced Image Security
-        document.querySelectorAll('img').forEach(img => {
-            // Disable right-click
-            img.addEventListener('contextmenu', (e) => {
-                e.preventDefault();
-                alert('Downloading images is not allowed.');
-            });
-
-            // Prevent drag and drop
-            img.addEventListener('dragstart', (e) => {
-                e.preventDefault();
-            });
-
-            // Prevent long press on mobile
-            img.addEventListener('touchstart', (e) => {
-                if (e.touches.length > 1) {
-                    e.preventDefault();
-                }
-            });
+        // Prevent drag and drop
+        img.addEventListener("dragstart", (e) => {
+          e.preventDefault();
         });
 
-        // Enhanced Screenshot Prevention
-        document.addEventListener('keydown', (e) => {
-            // Detect PrintScreen, Ctrl+Shift+I (DevTools), Ctrl+P (Print), or similar
-            if (e.key === 'PrintScreen' || 
-                (e.ctrlKey && e.shiftKey && e.key === 'I') || 
-                (e.ctrlKey && e.key === 'p') ||
-                (e.metaKey && e.key === 'p')) { // Mac print shortcut
-                e.preventDefault();
-                alert('Screenshots and printing are not permitted on this site.');
-            }
+        // Prevent long press on mobile
+        img.addEventListener("touchstart", (e) => {
+          if (e.touches.length > 1) {
+            e.preventDefault();
+          }
         });
+      });
 
-        // Blur images on attempted screenshot (basic deterrent)
-        window.addEventListener('keyup', (e) => {
-            if (e.key === 'PrintScreen') {
-                document.querySelectorAll('img').forEach(img => {
-                    img.style.filter = 'blur(10px)';
-                    setTimeout(() => {
-                        img.style.filter = '';
-                    }, 1000);
-                });
-            }
-        });
+      // Enhanced Screenshot Prevention
+      document.addEventListener("keydown", (e) => {
+        // Detect PrintScreen, Ctrl+Shift+I (DevTools), Ctrl+P (Print), or similar
+        if (
+          e.key === "PrintScreen" ||
+          (e.ctrlKey && e.shiftKey && e.key === "I") ||
+          (e.ctrlKey && e.key === "p") ||
+          (e.metaKey && e.key === "p")
+        ) {
+          // Mac print shortcut
+          e.preventDefault();
+          alert("Screenshots and printing are not permitted on this site.");
+        }
+      });
 
-        // Warn on DevTools opening
-        let devToolsOpen = false;
-        const devToolsCheck = () => {
-            const widthThreshold = window.outerWidth - window.innerWidth > 160;
-            const heightThreshold = window.outerHeight - window.innerHeight > 160;
-            if (widthThreshold || heightThreshold) {
-                if (!devToolsOpen) {
-                    devToolsOpen = true;
-                    alert('Developer tools detected. Please refrain from taking screenshots or downloading images.');
-                }
-            } else {
-                devToolsOpen = false;
-            }
-        };
-        setInterval(devToolsCheck, 1000);
+      // Blur images on attempted screenshot (basic deterrent)
+      window.addEventListener("keyup", (e) => {
+        if (e.key === "PrintScreen") {
+          document.querySelectorAll("img").forEach((img) => {
+            img.style.filter = "blur(10px)";
+            setTimeout(() => {
+              img.style.filter = "";
+            }, 1000);
+          });
+        }
+      });
 
-        // Watermark overlay
-        // const watermark = document.createElement('div');
-        // watermark.className = 'watermark';
-        // watermark.textContent = 'Events Management Society - No Screenshots Allowed';
-        // document.body.appendChild(watermark);
+      // Warn on DevTools opening
+      let devToolsOpen = false;
+      const devToolsCheck = () => {
+        const widthThreshold = window.outerWidth - window.innerWidth > 160;
+        const heightThreshold = window.outerHeight - window.innerHeight > 160;
+        if (widthThreshold || heightThreshold) {
+          if (!devToolsOpen) {
+            devToolsOpen = true;
+            alert(
+              "Developer tools detected. Please refrain from taking screenshots or downloading images."
+            );
+          }
+        } else {
+          devToolsOpen = false;
+        }
+      };
+      setInterval(devToolsCheck, 1000);
+
+      // Watermark overlay
+      // const watermark = document.createElement('div');
+      // watermark.className = 'watermark';
+      // watermark.textContent = 'Events Management Society - No Screenshots Allowed';
+      // document.body.appendChild(watermark);
     </script>
-</body>
+  </body>
 </html>
